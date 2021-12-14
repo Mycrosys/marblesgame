@@ -8,20 +8,26 @@
 } 
 
 body {
+    width: 1200px;
+    margin: 250px auto;
     font-family: 'Proza Libre', Helvetica, Arial, sans-serif;
     color: rgb(14, 21, 21); 
     background-color: rgb(236, 238, 240);
+    background-image: url("../images/marblesbg.jpg");
+    background-repeat: no-repeat;
 }
 
 h1 {
     font-family: 'Cormorant Upright', Garamond, "Times New Roman";
     font-size: 350%;
     text-align: center;
+    background-color: rgb(236, 238, 240, 0.5);
 }
 
 .social-networks {
     text-align: center;
     clear: both;
+    background-color: rgb(236, 238, 240, 0.5);
 }
 
 .social-networks > li {
@@ -31,6 +37,6 @@ h1 {
 .social-networks i {
     font-size: 200%;
     margin: 10px;
-    padding: 20px;
+    padding: 10px;
     color: rgb(14, 21, 21);
 }
