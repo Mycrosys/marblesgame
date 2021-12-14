@@ -1,0 +1,36 @@
+/* Importing Cormorant from Google Font*/
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@700&family=Proza+Libre&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+} 
+
+body {
+    font-family: 'Proza Libre', Helvetica, Arial, sans-serif;
+    color: rgb(14, 21, 21); 
+    background-color: rgb(236, 238, 240);
+}
+
+h1 {
+    font-family: 'Cormorant Upright', Garamond, "Times New Roman";
+    font-size: 350%;
+    text-align: center;
+}
+
+.social-networks {
+    text-align: center;
+    clear: both;
+}
+
+.social-networks > li {
+    display: inline;
+}
+
+.social-networks i {
+    font-size: 200%;
+    margin: 10px;
+    padding: 20px;
+    color: rgb(14, 21, 21);
+}
