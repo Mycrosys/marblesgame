@@ -10,7 +10,7 @@
 body {
     width: 1200px;
     height: 100%;
-    margin: 250px auto;
+    margin: 75px auto;
     font-family: 'Proza Libre', Helvetica, Arial, sans-serif;
     color: rgb(14, 21, 21); 
     background-color: rgb(236, 238, 240);
@@ -23,6 +23,29 @@ h1 {
     font-size: 350%;
     text-align: center;
     background-color: rgb(236, 238, 240, 0.5);
+}
+
+hr {
+    padding-top: 30px;
+}
+
+#title, #top-box, #mid-box, #bottom-box {
+    width: 800px;
+    height: 75px;
+    background-color: rgb(236, 238, 240);
+    border: 4px solid rgb(14, 21, 21);
+    border-radius: 5px;
+    margin: 0 auto;
+    box-shadow: 5px 10px;
+}
+
+/*
+#top-box, #bottom-box {
+    visibility: hidden;
+} */
+
+#mid-box {
+    height: 350px;
 }
 
 .social-networks {
