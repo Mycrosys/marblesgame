@@ -38,6 +38,7 @@ hr {
     border-radius: 5px;
     margin: 0 auto;
     box-shadow: 5px 10px;
+    text-align: center;
 }
 
 #top-box, #bottom-box {
@@ -48,6 +49,18 @@ hr {
 #mid-box {
     height: 350px;
 }
+
+.button {
+    background-color: silver;
+    border: 2px solid rgb(14, 21, 21);
+    color: rgb(14, 21, 21);
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 250%;
+    margin: 135px auto;
+    box-shadow: 5px 10px;
+    font-weight: bold;
+  }
 
 .social-networks {
     text-align: center;
