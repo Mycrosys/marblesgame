@@ -39,10 +39,9 @@ hr {
     box-shadow: 5px 10px;
 }
 
-/*
 #top-box, #bottom-box {
     visibility: hidden;
-} */
+}
 
 #mid-box {
     height: 350px;
