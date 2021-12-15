@@ -49,6 +49,11 @@ hr {
     height: 350px;
 }
 
+#mid-box p {
+    font-size: 120%;
+    padding: 15px;
+}
+
 .button {
     font-family: 'Cormorant Upright', Garamond, "Times New Roman";
     background-color: #BFBFC4;
@@ -57,7 +62,7 @@ hr {
     padding: 15px 32px;
     display: inline-block;
     font-size: 300%;
-    margin: 120px auto;
+    margin: 35px auto;
     box-shadow: 5px 10px;
     font-weight: bold;
   }
