@@ -16,6 +16,7 @@ body {
     background-color: rgb(236, 238, 240);
     background-image: url("../images/marblesbg.jpg");
     background-repeat: no-repeat;
+    background-position: center top;
 }
 
 h1 {
@@ -41,6 +42,7 @@ hr {
 
 #top-box, #bottom-box {
     visibility: hidden;
+    height: 0px;
 }
 
 #mid-box {
@@ -48,13 +50,14 @@ hr {
 }
 
 .social-networks {
-    width: 100%;
     text-align: center;
-    clear: both;
+    width: 800px;
+    height: 75px;
     background-color: rgb(236, 238, 240);
-    position: absolute;
-    bottom: 0px;
-    left: 0px;   
+    border: 4px solid rgb(14, 21, 21);
+    border-radius: 5px;
+    margin: 0 auto;
+    box-shadow: 5px 10px;
 }
 
 .social-networks > li {
