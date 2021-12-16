@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 /**
- * Choose the Amount of Marbles at the start of the game
+ * Choose the Amount of Marbles at the start of the game and
+ * set starting scores
  */
 function chooseMarblesAmount() {
     let difficulty = document.getElementById("mid-box");
@@ -33,17 +34,38 @@ function chooseMarblesAmount() {
         <p>Please choose the amount of Marbles each side starts with. More Marbles make for a longer
         game.</p>
         <div id="select-box">
-            <select>
-                <option value="0">10</option>
-                <option value="1">15</option>
-                <option value="2">20</option>
-                <option value="3">25</option>
-                <option value="4">30</option>
+            <select id="value-select">
+                <option value="5">5</option>
+                <option value="10" selected="selected">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
             </select>
         </div>
         <button data-type="marblesamount" class="button">Continue</button>
     `;
+
+    let buttons = document.getElementsByTagName("button");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            if (this.getAttribute("data-type")==="marblesamount") {
+                let choosenMarbles = document.getElementById("value-select");
+                userScore = parseInt(choosenMarbles.value);
+                computerScore = parseInt(choosenMarbles.value);
+                console.log(computerScore);
+                console.log(userScore);
+                alert(`Continue to the game!`);
+            }
+            else {
+                let buttonType = this.getAttribute("button-type");
+                alert(`You clicked ${buttonType}`);
+            }
+        })
+    }
 }
+
+
 
 function runGame() {
 
