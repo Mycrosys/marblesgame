@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type")==="startgame") {
-                alert("You clicked to start the Game!");
+                chooseMarblesAmount();
             }
             else {
                 let buttonType = this.getAttribute("button-type");
@@ -24,6 +24,26 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 
+/**
+ * Choose the Amount of Marbles at the start of the game
+ */
+function chooseMarblesAmount() {
+    let difficulty = document.getElementById("mid-box");
+    difficulty.innerHTML = `
+        <p>Please choose the amount of Marbles each side starts with. More Marbles make for a longer
+        game.</p>
+        <div id="select-box">
+            <select>
+                <option value="0">10</option>
+                <option value="1">15</option>
+                <option value="2">20</option>
+                <option value="3">25</option>
+                <option value="4">30</option>
+            </select>
+        </div>
+        <button data-type="marblesamount" class="button">Continue</button>
+    `;
+}
 
 function runGame() {
 

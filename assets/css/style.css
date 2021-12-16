@@ -68,6 +68,26 @@ hr {
     font-weight: bold;
   }
 
+#select-box {
+    padding: 25px 0 15px;
+    margin: 0 auto;
+}
+
+
+#select-box select {
+    background-color: rgb(236, 238, 240);
+    border: none;
+    padding: 0 10px 0 0;
+    margin: 0;
+    width: 75px;
+    font-family: 'Proza Libre', Helvetica, Arial, sans-serif;
+    font-size: 175%;
+    cursor: inherit;
+    line-height: inherit;
+    color:#1E2039;
+    font-weight: 800;
+}
+
 .social-networks {
     text-align: center;
     width: 800px;
