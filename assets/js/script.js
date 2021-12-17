@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function() {
  * set starting scores
  */
 function chooseMarblesAmount() {
-    let difficulty = document.getElementById("mid-box");
-    difficulty.innerHTML = `
+    let mainContent = document.getElementById("mid-box");
+    mainContent.innerHTML = `
         <p>Please choose the amount of Marbles each side starts with. More Marbles make for a longer
         game.</p>
         <div id="select-box">
@@ -53,9 +53,7 @@ function chooseMarblesAmount() {
                 let choosenMarbles = document.getElementById("value-select");
                 userScore = parseInt(choosenMarbles.value);
                 computerScore = parseInt(choosenMarbles.value);
-                console.log(computerScore);
-                console.log(userScore);
-                alert(`Continue to the game!`);
+                runGame();
             }
             else {
                 let buttonType = this.getAttribute("button-type");
@@ -65,8 +63,37 @@ function chooseMarblesAmount() {
     }
 }
 
-
-
 function runGame() {
+    let topContent = document.getElementById("top-box");
+    topContent.style.visibility = "visible";
+    topContent.style.height = "130px";
+    topContent.innerHTML = `
+        <p>Turn ${gameTurn}: Bet your Marbles!</p>
+        <span style="float:left; color: #325635">Your Score: ${userScore}</span>
+        <span style="float:right; color: #AE3441">Computer Score: ${computerScore}</span>
+    `
 
+    let bottomContent = document.getElementById("bottom-box");
+    bottomContent.style.visibility = "visible";
+    bottomContent.style.height = "55px";
+    bottomContent.innerHTML = `
+        <p>Last turn result!</p>
+    `
+
+    let mainContent = document.getElementById("mid-box");
+    mainContent.innerHTML = `
+        <p>Please choose the amount of Marbles you want to bet. You must bet at least one Marble
+        and can bet up to a maximum of 5 Marbles. However, you can only bet as much Marbles as you
+        or the other side has.</p>
+        <div id="select-box">
+            <select id="bet-select" style="width:175px;">
+                <option value="1">1 Marble</option>
+                <option value="2">2 Marbles</option>
+                <option value="3">3 Marbles</option>
+                <option value="4">4 Marbles</option>
+                <option value="5">5 Marbles</option>
+            </select>
+        </div>
+        <button data-type="marblesbet" class="button">Bet Marbles</button>
+    `;
 }

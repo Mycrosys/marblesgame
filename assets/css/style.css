@@ -45,6 +45,16 @@ hr {
     height: 0px;
 }
 
+#top-box {
+    font-weight: 800;
+    font-size: 300%;
+    font-family: 'Cormorant Upright', Garamond, "Times New Roman";
+}
+
+#top-box span, p {
+    padding: 5px 10px 0px;
+}
+
 #mid-box {
     height: 350px;
 }
@@ -54,6 +64,12 @@ hr {
     padding: 15px;
     font-weight: 800;
 }
+
+#bottom-box {
+    font-weight: 800;
+    font-size: 200%;
+}
+
 
 .button {
     font-family: 'Cormorant Upright', Garamond, "Times New Roman";
@@ -76,7 +92,7 @@ hr {
 
 #select-box select {
     background-color: rgb(236, 238, 240);
-    border: none;
+    border: 2px solid #1E2039;
     padding: 0 10px 0 0;
     margin: 0;
     width: 75px;
