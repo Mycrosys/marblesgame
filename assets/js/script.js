@@ -79,7 +79,7 @@ function runGame() {
 
 function playBet() {
     
-    // Manipulate the content of the site for Betting round
+    // Display user and computer Score
     let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
         <p>Turn ${gameTurn}: Bet your Marbles!</p>
@@ -87,29 +87,57 @@ function playBet() {
         <span style="float:right; color: #AE3441">Computer Score: ${computerScore}</span>
     `
 
+    // Display last round results
     let bottomContent = document.getElementById("bottom-box");
     bottomContent.innerHTML = `
         <p>Last turn result!</p>
     `
-
+    
+    // Manipulate main playing field for betting marbles
     let mainContent = document.getElementById("mid-box");
-    mainContent.innerHTML = `
+    let newContent = `
         <p>Please choose the amount of Marbles you want to bet. You must bet at least one Marble
         and can bet up to a maximum of 5 Marbles. However, you can only bet as much Marbles as you
         or the other side has.</p>
         <div id="select-box">
             <select id="bet-select" style="width:175px;">
                 <option value="1">1 Marble</option>
-                <option value="2">2 Marbles</option>
-                <option value="3">3 Marbles</option>
-                <option value="4">4 Marbles</option>
-                <option value="5">5 Marbles</option>
+    `;
+    
+    for (let i=2; i<=calculateMaxBet(); i++) {
+        newContent += `
+                <option value="${i}">${i} Marbles</option>    
+        `;
+    }
+    
+    newContent += `
             </select>
         </div>
         <button data-type="marblesbet" class="button">Bet Marbles</button>
-    `;
+    `; 
+
+    mainContent.innerHTML = newContent;
 }
 
 function playGuess() {
 
+}
+
+/**
+ * Calculates the maximum amount of Marbles that can be bet and 
+ * returns that value
+ */
+function calculateMaxBet() {
+    let maxBet=1;
+    
+    if (userScore>=5 && computerScore>=5) {
+        maxBet=5;
+    } else if (userScore<5 && computerScore>=5) {
+        maxBet=userScore;
+    } else if (userScore>=5 && computerScore<5) {
+        maxBet=computerScore;
+    } else {
+        alert(`Calculation of maximum Bet Error!`);
+    }
+    return maxBet;
 }
