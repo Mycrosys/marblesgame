@@ -1,8 +1,8 @@
 // Global variables to track Score and Turn
 
 let userScore = 1;
-let computerScore =1;
-let gameTurn =1;
+let computerScore = 1;
+let gameTurn = 1;
 
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
@@ -79,6 +79,25 @@ function runGame() {
 
 function playBet() {
     
+    setBetField();
+    
+    let buttons = document.getElementsByTagName("button");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            if (this.getAttribute("data-type")==="marblesbet") {
+                alert(`Continue to Calculation and Guess!`);
+            }
+            else {
+                let buttonType = this.getAttribute("button-type");
+                alert(`You clicked ${buttonType}`);
+            }
+        })
+    }
+}
+
+function setBetField() {
+
     // Display user and computer Score
     let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
@@ -121,6 +140,10 @@ function playBet() {
 
 function playGuess() {
 
+}
+
+function setGuessField() {
+    
 }
 
 /**
