@@ -64,9 +64,23 @@ function chooseMarblesAmount() {
 }
 
 function runGame() {
+    
+    // Make the 2 divs (top and bottom) visible for playing and set height
     let topContent = document.getElementById("top-box");
     topContent.style.visibility = "visible";
     topContent.style.height = "130px";
+    
+    let bottomContent = document.getElementById("bottom-box");
+    bottomContent.style.visibility = "visible";
+    bottomContent.style.height = "55px";
+    
+    playBet();
+}
+
+function playBet() {
+    
+    // Manipulate the content of the site for Betting round
+    let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
         <p>Turn ${gameTurn}: Bet your Marbles!</p>
         <span style="float:left; color: #325635">Your Score: ${userScore}</span>
@@ -74,8 +88,6 @@ function runGame() {
     `
 
     let bottomContent = document.getElementById("bottom-box");
-    bottomContent.style.visibility = "visible";
-    bottomContent.style.height = "55px";
     bottomContent.innerHTML = `
         <p>Last turn result!</p>
     `
@@ -96,4 +108,8 @@ function runGame() {
         </div>
         <button data-type="marblesbet" class="button">Bet Marbles</button>
     `;
+}
+
+function playGuess() {
+
 }
