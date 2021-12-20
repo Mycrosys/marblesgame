@@ -88,10 +88,11 @@ function playBet() {
             if (this.getAttribute("data-type")==="marblesbet") {
                 let betMarbles = document.getElementById("bet-select");
                 let bet = parseInt(betMarbles.value);
+                
+                // computer makes a random guess if the number is even(0) or odd(1)
                 let guess = Math.floor(Math.random() * 2);
-                console.log(bet);
-                console.log(guess);
-
+                
+                // calculate new scores depending on right or wrong guess
                 if (calculateResult(bet, guess)) {
                     userScore = userScore - bet;
                     computerScore = computerScore + bet;
@@ -99,12 +100,13 @@ function playBet() {
                     userScore = userScore + bet;
                     computerScore = computerScore - bet;
                 }
-                console.log(userScore);
-                console.log(computerScore);
-                alert(`Continue to Calculation and Guess!`);
-            }
-            else {
-                let buttonType = this.getAttribute("button-type");
+                
+                // Next turn coming up so increase turn counter
+                gameTurn++;
+                playGuess();
+
+            } else {
+                let buttonType = this.getAttribute("data-type");
                 alert(`You clicked ${buttonType}`);
             }
         })
@@ -154,11 +156,84 @@ function setBetField() {
 }
 
 function playGuess() {
+    
+    setGuessField();
+
+    // computer makes a random bet of marbles between 1 and the max amount allowed
+    let bet = Math.floor(Math.random() * calculateMaxBet() +1);
+
+    let buttons = document.getElementsByTagName("button");
+    
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            if (this.getAttribute("data-type")==="even") {
+                let guess = 0;
+                
+                // calculate new scores depending on right or wrong guess
+                if (calculateResult(bet, guess)) {
+                    userScore = userScore + bet;
+                    computerScore = computerScore - bet;
+                } else {
+                    userScore = userScore - bet;
+                    computerScore = computerScore + bet;
+                }
+                
+                // Next turn coming up so increase turn counter
+                gameTurn++;
+                playBet();
+
+            } else if (this.getAttribute("data-type")==="odd") {
+                let guess = 1;
+                
+                // calculate new scores depending on right or wrong guess
+                if (calculateResult(bet, guess)) {
+                    userScore = userScore + bet;
+                    computerScore = computerScore - bet;
+                } else {
+                    userScore = userScore - bet;
+                    computerScore = computerScore + bet;
+                }
+                
+                // Next turn coming up so increase turn counter
+                gameTurn++;
+                playBet();
+
+            } else {
+                let buttonType = this.getAttribute("data-type");
+                alert(`You clicked ${buttonType}`);
+            }
+        })
+    }
 
 }
 
 function setGuessField() {
     
+    // Display user and computer Score
+    let topContent = document.getElementById("top-box");
+    topContent.innerHTML = `
+        <p>Turn ${gameTurn}: Guess Even or Odd!</p>
+        <span style="float:left; color: #325635;">Your Score: ${userScore}</span>
+        <span style="float:right; color: #AE3441;">Computer Score: ${computerScore}</span>
+    `
+
+    // Display last round results
+    let bottomContent = document.getElementById("bottom-box");
+    bottomContent.innerHTML = `
+        <p>Last turn result!</p>
+    `
+    
+    // Manipulate main playing field for betting marbles
+    let mainContent = document.getElementById("mid-box");
+    let newContent = `
+        <p>Please choose if the amount of Marbles the Computer bets are Even or Odd.</p>
+        <div style="margin:50px;">
+            <span style="float:left;"><button data-type="even" class="button">Even</button></span>
+            <span style="float:right;"><button data-type="odd" class="button">Odd</button></span>
+        </div>
+    `; 
+
+    mainContent.innerHTML = newContent;    
 }
 
 /**
@@ -181,10 +256,6 @@ function calculateMaxBet() {
 }
 
 function calculateResult(bet, guess) {
-    console.log(bet);
-    console.log(guess);
-    console.log(bet%2);
-    
     if (bet%2===guess) {
         return true;
     } else {
