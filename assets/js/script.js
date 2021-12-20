@@ -79,6 +79,10 @@ function runGame() {
 
 function playBet() {
     
+    if (userScore===0 || computerScore ===0) {
+        announceWinner();
+    }
+
     setBetField();
     
     let buttons = document.getElementsByTagName("button");
@@ -157,6 +161,10 @@ function setBetField() {
 
 function playGuess() {
     
+    if (userScore===0 || computerScore ===0) {
+        announceWinner();
+    }
+
     setGuessField();
 
     // computer makes a random bet of marbles between 1 and the max amount allowed
@@ -178,7 +186,7 @@ function playGuess() {
                     computerScore = computerScore + bet;
                 }
                 
-                // Next turn coming up so increase turn counter
+                // Next turn coming up so increase turn counter and set up for betting marbles
                 gameTurn++;
                 playBet();
 
@@ -194,7 +202,7 @@ function playGuess() {
                     computerScore = computerScore + bet;
                 }
                 
-                // Next turn coming up so increase turn counter
+                // Next turn coming up so increase turn counter and set up for betting marbles
                 gameTurn++;
                 playBet();
 
@@ -260,5 +268,15 @@ function calculateResult(bet, guess) {
         return true;
     } else {
         return false;
+    }
+}
+
+function announceWinner() {
+    if(userScore===0) {
+        alert(`Computer Wins!`);
+    } else if (computerScore===0) {
+        alert(`Player Wins!`);
+    } else {
+        alert(`It's a draw!`);
     }
 }
