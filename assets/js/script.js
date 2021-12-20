@@ -95,7 +95,12 @@ function playBet() {
                 
                 // computer makes a random guess if the number is even(0) or odd(1)
                 let guess = Math.floor(Math.random() * 2);
-                
+
+                // if player has only one marble left, computer will always chose "odd" and win the game
+                if (userScore===1) {
+                    guess=1;
+                }
+                            
                 // calculate new scores depending on right or wrong guess
                 if (calculateResult(bet, guess)) {
                     userScore = userScore - bet;
