@@ -86,6 +86,21 @@ function playBet() {
     for (let button of buttons) {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type")==="marblesbet") {
+                let betMarbles = document.getElementById("bet-select");
+                let bet = parseInt(betMarbles.value);
+                let guess = Math.floor(Math.random() * 2);
+                console.log(bet);
+                console.log(guess);
+
+                if (calculateResult(bet, guess)) {
+                    userScore = userScore - bet;
+                    computerScore = computerScore + bet;
+                } else {
+                    userScore = userScore + bet;
+                    computerScore = computerScore - bet;
+                }
+                console.log(userScore);
+                console.log(computerScore);
                 alert(`Continue to Calculation and Guess!`);
             }
             else {
@@ -163,4 +178,16 @@ function calculateMaxBet() {
         alert(`Calculation of maximum Bet Error!`);
     }
     return maxBet;
+}
+
+function calculateResult(bet, guess) {
+    console.log(bet);
+    console.log(guess);
+    console.log(bet%2);
+    
+    if (bet%2===guess) {
+        return true;
+    } else {
+        return false;
+    }
 }
