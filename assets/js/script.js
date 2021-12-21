@@ -248,6 +248,49 @@ function setGuessField() {
     mainContent.innerHTML = newContent;    
 }
 
+function setWinnerField() {
+    
+    // Display user and computer Score
+    let topContent = document.getElementById("top-box");
+    topContent.innerHTML = `
+        <p>We have a Winner!</p>
+        <span style="float:left; color: #325635;">Your Score: ${userScore}</span>
+        <span style="float:right; color: #AE3441;">Computer Score: ${computerScore}</span>
+    `
+
+    // Display last round results
+    let bottomContent = document.getElementById("bottom-box");
+    bottomContent.innerHTML = `
+        <p>Last turn result!</p>
+    `
+    
+    let mainContent = document.getElementById("mid-box");
+    let newContent;
+
+    if(userScore===0) {
+        newContent = `
+            <h2>You Lose!</h2>
+            <p>Too bad. Sadly, the numbers weren't in your favor. Better luck next time!</p>
+        `;
+    } else if (computerScore===0) {
+        newContent = `
+            <h2>You Win!</h2>
+            <p>Good job! Now challenge yourself again by winning multiple times in a row!</p>
+        `;
+    } else {
+        newContent = `
+            <h2>It's a Draw!</h2>
+            <p>Honestly, you should have won this. Now try again!</p>
+        `;
+    }
+
+    newContent += `
+        <button data-type="quit" class="button">Play again!</button>
+    `;
+        
+    mainContent.innerHTML = newContent;
+}
+
 /**
  * Calculates the maximum amount of Marbles that can be bet and 
  * returns that value
@@ -276,32 +319,9 @@ function calculateResult(bet, guess) {
 }
 
 function announceWinner() {
-    let mainContent = document.getElementById("mid-box");
-    let newContent;
+    
+    setWinnerField();
 
-    if(userScore===0) {
-        newContent = `
-            <h2>You Lose!</h2>
-            <p>Too bad. Sadly, the numbers weren't in your favor. Better luck next time!</p>
-        `;
-    } else if (computerScore===0) {
-        newContent = `
-            <h2>You Win!</h2>
-            <p>Good job! Now challenge yourself again by winning multiple times in a row!</p>
-        `;
-    } else {
-        newContent = `
-            <h2>It's a Draw!</h2>
-            <p>Honestly, you should have won this. Now try again!</p>
-        `;
-    }
-
-    newContent += `
-        <button data-type="quit" class="button">Play again!</button>
-    `;
-        
-    mainContent.innerHTML = newContent;
-      
     let buttons = document.getElementsByTagName("button");
 
     for (let button of buttons) {
