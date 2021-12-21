@@ -26,7 +26,6 @@ h2 {
     padding: 20px;
 }
 
-
 hr {
     padding-top: 30px;
 }
@@ -78,10 +77,10 @@ hr {
     background-color: #BFBFC4;
     border: 2px solid #1E2039;
     color: #1E2039;
-    padding: 15px 32px;
+    padding: 10px 20px;
     display: inline-block;
-    font-size: 300%;
-    margin: 25px auto;
+    font-size: 200%;
+    margin: 15px auto;
     box-shadow: 5px 10px;
     font-weight: bold;
   }

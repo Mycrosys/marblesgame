@@ -81,7 +81,7 @@ function startGame() {
     
     let bottomContent = document.getElementById("bottom-box");
     bottomContent.style.visibility = "visible";
-    bottomContent.style.height = "210px";
+    bottomContent.style.height = "170px";
     
     lastTurnResult = "Here you will see the results of your last turn.";        // Set last turn result for the first time
 
@@ -277,8 +277,8 @@ function setGuessField() {
         Odd amount of Marbles to bet against you. Please click on the appropriate Button to 
         make your choice.</p>
         <div style="margin: 20px 150px 0;">
-            <span style="float:left;"><button data-type="even" class="button">Even</button></span>
-            <span style="float:right;"><button data-type="odd" class="button">Odd</button></span>
+            <span style="float:left;"><button data-type="even" class="button">Guess Even</button></span>
+            <span style="float:right;"><button data-type="odd" class="button">Guess Odd</button></span>
         </div>
     `; 
 
