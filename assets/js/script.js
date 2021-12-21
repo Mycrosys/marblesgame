@@ -1,12 +1,12 @@
 // Global variables to track Score and Turn
 
-let userScore = 1;
-let computerScore = 1;
-let gameTurn = 1;
-let lastTurnResult;
+let userScore = 1;          // Score for the Player
+let computerScore = 1;      // Score for the Computer
+let gameTurn = 1;           // Current Turn number
+let lastTurnResult;         // The game result of the previous turn (string)
 
 // Wait for the DOM to finish loading before running the game
-// Get the button elements and add event listeners to them
+// Get the button elements and add event listeners to start the game
 
 document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByTagName("button");
@@ -26,11 +26,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 /**
- * Choose the Amount of Marbles at the start of the game and
- * set starting scores
+ * Initializing the game by choosing the Amount of Marbles at the start
+ * of the game, then set starting scores for both parties
  */
 function chooseMarblesAmount() {
     let mainContent = document.getElementById("mid-box");
+    
+    // set to one of the available options (5,10,15,20,25)
     mainContent.innerHTML = `
         <p>Please choose the amount of Marbles each side starts with. More Marbles make for a longer
         game.</p>
@@ -52,18 +54,22 @@ function chooseMarblesAmount() {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type")==="marblesamount") {
                 let choosenMarbles = document.getElementById("value-select");
-                userScore = parseInt(choosenMarbles.value);
-                computerScore = parseInt(choosenMarbles.value);
+                userScore = parseInt(choosenMarbles.value);             // set Userscore to selected amount
+                computerScore = parseInt(choosenMarbles.value);         // set Computerscore to selected amount
                 startGame();
             }
             else {
-                let buttonType = this.getAttribute("button-type");
+                let buttonType = this.getAttribute("button-type");      // Handler for everything else, should never happen
                 alert(`You clicked ${buttonType}`);
             }
         })
     }
 }
 
+/**
+ * First run setup for the html to enable all boxes and set correct heights,
+ * then start the first turn (bet)
+ */
 function startGame() {
     
     // Make the 2 divs (top and bottom) visible for playing and set height
@@ -75,17 +81,21 @@ function startGame() {
     bottomContent.style.visibility = "visible";
     bottomContent.style.height = "210px";
     
-    lastTurnResult = "Here you will see the results of your last turn.";
+    lastTurnResult = "Here you will see the results of your last turn.";        // Set last turn result for the first time
 
-    playBet();
+    playBet();                                                                  // Start betting round
 }
 
+/**
+ * This starts the betting round. This is the core gameplay loop with this 
+ * and the guessing round alternating between each other.
+ */
 function playBet() {
     
-    if (userScore===0 || computerScore ===0) {
-        announceWinner();
+    if (userScore===0 || computerScore ===0) {      // check if there is already a winner
+        announceWinner();                           // if there is a winner, announce him/her
     } else {
-        setBetField();
+        setBetField();                              // set up the html for playing the betting round
         
         let buttons = document.getElementsByTagName("button");
 
@@ -104,24 +114,23 @@ function playBet() {
                     }
                                 
                     // calculate new scores depending on right or wrong guess
-                    if (calculateResult(bet, guess)) {
+                    if (calculateResult(bet, guess)) {              // if true is returned the answer was correct and player loses marbles
                         userScore = userScore - bet;
                         computerScore = computerScore + bet;
                         lastTurnResult = `Computer chose right! You <span id="lose">lose ${bet} Marble/s</span>!`;
-                    } else {
+                    } else {                                        // if false is returned the answer was wrong and player gains marbles
                         userScore = userScore + bet;
                         computerScore = computerScore - bet;
                         lastTurnResult = `Computer chose wrong! You <span id="win">win ${bet} Marble/s</span>!`;
                     }
                     
-                    // Next turn coming up so increase turn counter
-                    gameTurn++;
-                    playGuess();
+                    gameTurn++;                                     // Next turn coming up so increase turn counter
+                    playGuess();                                    // start the guessing round
 
-                } else if (this.getAttribute("data-type")==="quit") {
-                        location.reload();
+                } else if (this.getAttribute("data-type")==="quit") {          
+                        location.reload();                                      // Check if player presses quit button and reset game by reloading page
                 } else {
-                    let buttonType = this.getAttribute("data-type");
+                    let buttonType = this.getAttribute("data-type");            // Handler for everything else, should never happen
                     alert(`You clicked ${buttonType}`);
                 }
             })
@@ -129,6 +138,9 @@ function playBet() {
     }
 }
 
+/**
+ * Setting up the html for the betting round
+ */
 function setBetField() {
 
     // Display user and computer Score
@@ -157,7 +169,7 @@ function setBetField() {
                 <option value="1">1 Marble</option>
     `;
     
-    for (let i=2; i<=calculateMaxBet(); i++) {
+    for (let i=2; i<=calculateMaxBet(); i++) {                  // Add the select box options for the max bet allowed
         newContent += `
                 <option value="${i}">${i} Marbles</option>    
         `;
@@ -172,12 +184,16 @@ function setBetField() {
     mainContent.innerHTML = newContent;
 }
 
+/**
+ * This starts the guessing round. This is the core gameplay loop with this 
+ * and the betting round alternating between each other.
+ */
 function playGuess() {
     
     if (userScore===0 || computerScore ===0) {
         announceWinner();
     } else {
-        setGuessField();
+        setGuessField();        // set up the html for playing the guessing round
 
         // computer makes a random bet of marbles between 1 and the max amount allowed
         let bet = Math.floor(Math.random() * calculateMaxBet() +1);
@@ -218,14 +234,13 @@ function playGuess() {
                         lastTurnResult = `You chose wrong! You <span id="lose">lose ${bet} Marble/s</span>!`;
                     }
                     
-                    // Next turn coming up so increase turn counter and set up for betting marbles
-                    gameTurn++;
-                    playBet();
+                    gameTurn++;     // Next turn coming up so increase turn counter
+                    playBet();      // start the betting round
 
                 } else if (this.getAttribute("data-type")==="quit") {
-                    location.reload();
+                    location.reload();                          // Check if player presses quit button and reset game by reloading page
                 } else {
-                    let buttonType = this.getAttribute("data-type");
+                    let buttonType = this.getAttribute("data-type");        // Handler for everything else, should never happen
                     alert(`You clicked ${buttonType}`);
                 }
             })
@@ -233,6 +248,9 @@ function playGuess() {
     }
 }
 
+/**
+ * Setting up the html for the guessing round
+ */
 function setGuessField() {
     
     // Display user and computer Score
@@ -265,6 +283,9 @@ function setGuessField() {
     mainContent.innerHTML = newContent;    
 }
 
+/**
+ * Setting up the html for the winning announcement
+ */
 function setWinnerField() {
     
     // Display user and computer Score
@@ -275,27 +296,27 @@ function setWinnerField() {
         <span style="float:right;" id="score-computer">Computer Score: ${computerScore}</span>
     `;
 
-    // Display last round results
+    // Display last round results, no quit to start here because we have it on the mid-box
     let bottomContent = document.getElementById("bottom-box");
     bottomContent.innerHTML = `
         <p>${lastTurnResult}</p>
     `;
-    bottomContent.style.height = "70px";
+    bottomContent.style.height = "70px";        // reduces the height because the button is no longer there
     
     let mainContent = document.getElementById("mid-box");
     let newContent;
 
-    if(userScore===0) {
+    if(userScore===0) {                 // Player has 0 points and loses
         newContent = `
             <h2>You Lose!</h2>
             <p>Too bad. Sadly, the numbers weren't in your favor. Better luck next time!</p>
         `;
-    } else if (computerScore===0) {
+    } else if (computerScore===0) {     // Computer has 0 points and loses
         newContent = `
             <h2>You Win!</h2>
             <p>Good job! Now challenge yourself again by winning multiple times in a row!</p>
         `;
-    } else {
+    } else {                            // All other cases, should never happen
         newContent = `
             <h2>It's a Draw!</h2>
             <p>Honestly, you should have won this. Now try again!</p>
@@ -328,6 +349,12 @@ function calculateMaxBet() {
     return maxBet;
 }
 
+/**
+ * Calculates if the amount of marbles bet are matching the guess the other player took
+ * @param {*} bet - The amount of Marbles bet by one player
+ * @param {*} guess - The guess of the other player if that amount is even (0) or odd (1)
+ * @returns - bolean true/false: true if the guess was correct, false if it wasn't
+ */
 function calculateResult(bet, guess) {
     if (bet%2===guess) {
         return true;
@@ -336,19 +363,23 @@ function calculateResult(bet, guess) {
     }
 }
 
+/**
+ * This starts the winning announcement. It ends the core gameplay loop and offers 
+ * a single button to restart the game by reloading the site
+ */
 function announceWinner() {
     
-    setWinnerField();
+    setWinnerField();       // set up the html for the winning announcement
 
     let buttons = document.getElementsByTagName("button");
 
     for (let button of buttons) {
         button.addEventListener("click", function() {
-            if (this.getAttribute("data-type")==="quit") {
+            if (this.getAttribute("data-type")==="quit") {          // Check if player presses quit button and reset game by reloading page
                 location.reload();
             }
             else {
-                let buttonType = this.getAttribute("data-type");
+                let buttonType = this.getAttribute("data-type");    // Handler for everything else, should never happen
                 alert(`You clicked ${buttonType}`);
             }
         })
