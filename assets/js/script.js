@@ -54,7 +54,7 @@ function chooseMarblesAmount() {
                 let choosenMarbles = document.getElementById("value-select");
                 userScore = parseInt(choosenMarbles.value);
                 computerScore = parseInt(choosenMarbles.value);
-                runGame();
+                startGame();
             }
             else {
                 let buttonType = this.getAttribute("button-type");
@@ -64,16 +64,16 @@ function chooseMarblesAmount() {
     }
 }
 
-function runGame() {
+function startGame() {
     
     // Make the 2 divs (top and bottom) visible for playing and set height
     let topContent = document.getElementById("top-box");
     topContent.style.visibility = "visible";
-    topContent.style.height = "130px";
+    topContent.style.height = "140px";
     
     let bottomContent = document.getElementById("bottom-box");
     bottomContent.style.visibility = "visible";
-    bottomContent.style.height = "55px";
+    bottomContent.style.height = "210px";
     
     lastTurnResult = "Here you will see the results of your last turn.";
 
@@ -118,6 +118,8 @@ function playBet() {
                     gameTurn++;
                     playGuess();
 
+                } else if (this.getAttribute("data-type")==="quit") {
+                        location.reload();
                 } else {
                     let buttonType = this.getAttribute("data-type");
                     alert(`You clicked ${buttonType}`);
@@ -141,6 +143,7 @@ function setBetField() {
     let bottomContent = document.getElementById("bottom-box");
     bottomContent.innerHTML = `
         <p>${lastTurnResult}</p>
+        <button data-type="quit" class="button">Quit to Start</button>
     `;
     
     // Manipulate main playing field for betting marbles
@@ -219,6 +222,8 @@ function playGuess() {
                     gameTurn++;
                     playBet();
 
+                } else if (this.getAttribute("data-type")==="quit") {
+                    location.reload();
                 } else {
                     let buttonType = this.getAttribute("data-type");
                     alert(`You clicked ${buttonType}`);
@@ -242,13 +247,16 @@ function setGuessField() {
     let bottomContent = document.getElementById("bottom-box");
     bottomContent.innerHTML = `
         <p>${lastTurnResult}</p>
+        <button data-type="quit" class="button">Quit to Start</button>
     `;
     
     // Manipulate main playing field for betting marbles
     let mainContent = document.getElementById("mid-box");
     let newContent = `
-        <p>Please choose if the amount of Marbles the Computer bets are Even or Odd.</p>
-        <div style="margin:50px;">
+        <p>Now the role changes and you have to take a guess if the Computer chose an Even or
+        Odd amount of Marbles to bet against you. Please click on the appropriate Button to 
+        make your choice.</p>
+        <div style="margin: 20px 150px 0;">
             <span style="float:left;"><button data-type="even" class="button">Even</button></span>
             <span style="float:right;"><button data-type="odd" class="button">Odd</button></span>
         </div>
@@ -272,6 +280,7 @@ function setWinnerField() {
     bottomContent.innerHTML = `
         <p>${lastTurnResult}</p>
     `;
+    bottomContent.style.height = "70px";
     
     let mainContent = document.getElementById("mid-box");
     let newContent;

@@ -20,11 +20,12 @@ body {
 }
 
 h2 {
-    font-family: 'Proza Libre', Helvetica, Arial, sans-serif;
+    font-family: 'Cormorant Upright', Garamond, "Times New Roman";
     font-size: 250%;
     text-align: center;
     padding: 20px;
 }
+
 
 hr {
     padding-top: 30px;
@@ -66,7 +67,8 @@ hr {
     font-weight: 800;
 }
 
-#bottom-box {
+#bottom-box p {
+    padding: 15px 10px 0px;
     font-weight: 800;
     font-size: 200%;
 }
@@ -79,7 +81,7 @@ hr {
     padding: 15px 32px;
     display: inline-block;
     font-size: 300%;
-    margin: 35px auto;
+    margin: 25px auto;
     box-shadow: 5px 10px;
     font-weight: bold;
   }
