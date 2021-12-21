@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */    // needed by jshint
+
 // Global variables to track Score and Turn
 
 let userScore = 1;          // Score for the Player
@@ -20,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 let buttonType = this.getAttribute("button-type");
                 alert(`You clicked ${buttonType}`);
             }
-        })
+        });
     }
-})
+});
 
 
 /**
@@ -62,7 +64,7 @@ function chooseMarblesAmount() {
                 let buttonType = this.getAttribute("button-type");      // Handler for everything else, should never happen
                 alert(`You clicked ${buttonType}`);
             }
-        })
+        });
     }
 }
 
@@ -133,7 +135,7 @@ function playBet() {
                     let buttonType = this.getAttribute("data-type");            // Handler for everything else, should never happen
                     alert(`You clicked ${buttonType}`);
                 }
-            })
+            });
         }
     }
 }
@@ -243,7 +245,7 @@ function playGuess() {
                     let buttonType = this.getAttribute("data-type");        // Handler for everything else, should never happen
                     alert(`You clicked ${buttonType}`);
                 }
-            })
+            });
         }
     }
 }
@@ -382,6 +384,6 @@ function announceWinner() {
                 let buttonType = this.getAttribute("data-type");    // Handler for everything else, should never happen
                 alert(`You clicked ${buttonType}`);
             }
-        })
+        });
     }
 }
