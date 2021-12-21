@@ -81,44 +81,44 @@ function playBet() {
     
     if (userScore===0 || computerScore ===0) {
         announceWinner();
-    }
+    } else {
+        setBetField();
+        
+        let buttons = document.getElementsByTagName("button");
 
-    setBetField();
-    
-    let buttons = document.getElementsByTagName("button");
+        for (let button of buttons) {
+            button.addEventListener("click", function() {
+                if (this.getAttribute("data-type")==="marblesbet") {
+                    let betMarbles = document.getElementById("bet-select");
+                    let bet = parseInt(betMarbles.value);
+                    
+                    // computer makes a random guess if the number is even(0) or odd(1)
+                    let guess = Math.floor(Math.random() * 2);
 
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-            if (this.getAttribute("data-type")==="marblesbet") {
-                let betMarbles = document.getElementById("bet-select");
-                let bet = parseInt(betMarbles.value);
-                
-                // computer makes a random guess if the number is even(0) or odd(1)
-                let guess = Math.floor(Math.random() * 2);
+                    // if player has only one marble left, computer will always chose "odd" and win the game
+                    if (userScore===1) {
+                        guess=1;
+                    }
+                                
+                    // calculate new scores depending on right or wrong guess
+                    if (calculateResult(bet, guess)) {
+                        userScore = userScore - bet;
+                        computerScore = computerScore + bet;
+                    } else {
+                        userScore = userScore + bet;
+                        computerScore = computerScore - bet;
+                    }
+                    
+                    // Next turn coming up so increase turn counter
+                    gameTurn++;
+                    playGuess();
 
-                // if player has only one marble left, computer will always chose "odd" and win the game
-                if (userScore===1) {
-                    guess=1;
-                }
-                            
-                // calculate new scores depending on right or wrong guess
-                if (calculateResult(bet, guess)) {
-                    userScore = userScore - bet;
-                    computerScore = computerScore + bet;
                 } else {
-                    userScore = userScore + bet;
-                    computerScore = computerScore - bet;
+                    let buttonType = this.getAttribute("data-type");
+                    alert(`You clicked ${buttonType}`);
                 }
-                
-                // Next turn coming up so increase turn counter
-                gameTurn++;
-                playGuess();
-
-            } else {
-                let buttonType = this.getAttribute("data-type");
-                alert(`You clicked ${buttonType}`);
-            }
-        })
+            })
+        }
     }
 }
 
@@ -168,56 +168,55 @@ function playGuess() {
     
     if (userScore===0 || computerScore ===0) {
         announceWinner();
-    }
+    } else {
+        setGuessField();
 
-    setGuessField();
+        // computer makes a random bet of marbles between 1 and the max amount allowed
+        let bet = Math.floor(Math.random() * calculateMaxBet() +1);
 
-    // computer makes a random bet of marbles between 1 and the max amount allowed
-    let bet = Math.floor(Math.random() * calculateMaxBet() +1);
+        let buttons = document.getElementsByTagName("button");
+        
+        for (let button of buttons) {
+            button.addEventListener("click", function() {
+                if (this.getAttribute("data-type")==="even") {
+                    let guess = 0;
+                    
+                    // calculate new scores depending on right or wrong guess
+                    if (calculateResult(bet, guess)) {
+                        userScore = userScore + bet;
+                        computerScore = computerScore - bet;
+                    } else {
+                        userScore = userScore - bet;
+                        computerScore = computerScore + bet;
+                    }
+                    
+                    // Next turn coming up so increase turn counter and set up for betting marbles
+                    gameTurn++;
+                    playBet();
 
-    let buttons = document.getElementsByTagName("button");
-    
-    for (let button of buttons) {
-        button.addEventListener("click", function() {
-            if (this.getAttribute("data-type")==="even") {
-                let guess = 0;
-                
-                // calculate new scores depending on right or wrong guess
-                if (calculateResult(bet, guess)) {
-                    userScore = userScore + bet;
-                    computerScore = computerScore - bet;
+                } else if (this.getAttribute("data-type")==="odd") {
+                    let guess = 1;
+                    
+                    // calculate new scores depending on right or wrong guess
+                    if (calculateResult(bet, guess)) {
+                        userScore = userScore + bet;
+                        computerScore = computerScore - bet;
+                    } else {
+                        userScore = userScore - bet;
+                        computerScore = computerScore + bet;
+                    }
+                    
+                    // Next turn coming up so increase turn counter and set up for betting marbles
+                    gameTurn++;
+                    playBet();
+
                 } else {
-                    userScore = userScore - bet;
-                    computerScore = computerScore + bet;
+                    let buttonType = this.getAttribute("data-type");
+                    alert(`You clicked ${buttonType}`);
                 }
-                
-                // Next turn coming up so increase turn counter and set up for betting marbles
-                gameTurn++;
-                playBet();
-
-            } else if (this.getAttribute("data-type")==="odd") {
-                let guess = 1;
-                
-                // calculate new scores depending on right or wrong guess
-                if (calculateResult(bet, guess)) {
-                    userScore = userScore + bet;
-                    computerScore = computerScore - bet;
-                } else {
-                    userScore = userScore - bet;
-                    computerScore = computerScore + bet;
-                }
-                
-                // Next turn coming up so increase turn counter and set up for betting marbles
-                gameTurn++;
-                playBet();
-
-            } else {
-                let buttonType = this.getAttribute("data-type");
-                alert(`You clicked ${buttonType}`);
-            }
-        })
+            })
+        }
     }
-
 }
 
 function setGuessField() {
@@ -277,11 +276,43 @@ function calculateResult(bet, guess) {
 }
 
 function announceWinner() {
+    let mainContent = document.getElementById("mid-box");
+    let newContent;
+
     if(userScore===0) {
-        alert(`Computer Wins!`);
+        newContent = `
+            <h2>You Lose!</h2>
+            <p>Too bad. Sadly, the numbers weren't in your favor. Better luck next time!</p>
+        `;
     } else if (computerScore===0) {
-        alert(`Player Wins!`);
+        newContent = `
+            <h2>You Win!</h2>
+            <p>Good job! Now challenge yourself again by winning multiple times in a row!</p>
+        `;
     } else {
-        alert(`It's a draw!`);
+        newContent = `
+            <h2>It's a Draw!</h2>
+            <p>Honestly, you should have won this. Now try again!</p>
+        `;
+    }
+
+    newContent += `
+        <button data-type="quit" class="button">Play again!</button>
+    `;
+        
+    mainContent.innerHTML = newContent;
+      
+    let buttons = document.getElementsByTagName("button");
+
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            if (this.getAttribute("data-type")==="quit") {
+                location.reload();
+            }
+            else {
+                let buttonType = this.getAttribute("data-type");
+                alert(`You clicked ${buttonType}`);
+            }
+        })
     }
 }

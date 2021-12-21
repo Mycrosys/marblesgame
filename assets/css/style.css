@@ -25,6 +25,13 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    font-family: 'Proza Libre', Helvetica, Arial, sans-serif;
+    font-size: 250%;
+    text-align: center;
+    padding: 20px;
+}
+
 hr {
     padding-top: 30px;
 }
