@@ -3,6 +3,7 @@
 let userScore = 1;
 let computerScore = 1;
 let gameTurn = 1;
+let lastTurnResult;
 
 // Wait for the DOM to finish loading before running the game
 // Get the button elements and add event listeners to them
@@ -74,6 +75,8 @@ function runGame() {
     bottomContent.style.visibility = "visible";
     bottomContent.style.height = "55px";
     
+    lastTurnResult = "Here you will see the results of your last turn.";
+
     playBet();
 }
 
@@ -104,9 +107,11 @@ function playBet() {
                     if (calculateResult(bet, guess)) {
                         userScore = userScore - bet;
                         computerScore = computerScore + bet;
+                        lastTurnResult = `Computer chose right! You <span id="lose">lose ${bet} Marble/s</span>!`;
                     } else {
                         userScore = userScore + bet;
                         computerScore = computerScore - bet;
+                        lastTurnResult = `Computer chose wrong! You <span id="win">win ${bet} Marble/s</span>!`;
                     }
                     
                     // Next turn coming up so increase turn counter
@@ -128,15 +133,15 @@ function setBetField() {
     let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
         <p>Turn ${gameTurn}: Bet your Marbles!</p>
-        <span style="float:left; color: #325635">Your Score: ${userScore}</span>
-        <span style="float:right; color: #AE3441">Computer Score: ${computerScore}</span>
-    `
+        <span style="float:left;" id="score-user">Your Score: ${userScore}</span>
+        <span style="float:right;" id="score-computer">Computer Score: ${computerScore}</span>
+    `;
 
     // Display last round results
     let bottomContent = document.getElementById("bottom-box");
     bottomContent.innerHTML = `
-        <p>Last turn result!</p>
-    `
+        <p>${lastTurnResult}</p>
+    `;
     
     // Manipulate main playing field for betting marbles
     let mainContent = document.getElementById("mid-box");
@@ -185,9 +190,11 @@ function playGuess() {
                     if (calculateResult(bet, guess)) {
                         userScore = userScore + bet;
                         computerScore = computerScore - bet;
+                        lastTurnResult = `You chose right! You <span id="win">win ${bet} Marble/s</span>!`;
                     } else {
                         userScore = userScore - bet;
                         computerScore = computerScore + bet;
+                        lastTurnResult = `You chose wrong! You <span id="lose">lose ${bet} Marble/s</span>!`;
                     }
                     
                     // Next turn coming up so increase turn counter and set up for betting marbles
@@ -201,9 +208,11 @@ function playGuess() {
                     if (calculateResult(bet, guess)) {
                         userScore = userScore + bet;
                         computerScore = computerScore - bet;
+                        lastTurnResult = `You chose right! You <span id="win">win ${bet} Marble/s</span>!`;
                     } else {
                         userScore = userScore - bet;
                         computerScore = computerScore + bet;
+                        lastTurnResult = `You chose wrong! You <span id="lose">lose ${bet} Marble/s</span>!`;
                     }
                     
                     // Next turn coming up so increase turn counter and set up for betting marbles
@@ -225,15 +234,15 @@ function setGuessField() {
     let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
         <p>Turn ${gameTurn}: Guess Even or Odd!</p>
-        <span style="float:left; color: #325635;">Your Score: ${userScore}</span>
-        <span style="float:right; color: #AE3441;">Computer Score: ${computerScore}</span>
-    `
+        <span style="float:left;" id="score-user">Your Score: ${userScore}</span>
+        <span style="float:right;" id="score-computer">Computer Score: ${computerScore}</span>
+    `;
 
     // Display last round results
     let bottomContent = document.getElementById("bottom-box");
     bottomContent.innerHTML = `
-        <p>Last turn result!</p>
-    `
+        <p>${lastTurnResult}</p>
+    `;
     
     // Manipulate main playing field for betting marbles
     let mainContent = document.getElementById("mid-box");
@@ -254,15 +263,15 @@ function setWinnerField() {
     let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
         <p>We have a Winner!</p>
-        <span style="float:left; color: #325635;">Your Score: ${userScore}</span>
-        <span style="float:right; color: #AE3441;">Computer Score: ${computerScore}</span>
-    `
+        <span style="float:left;" id="score-user">Your Score: ${userScore}</span>
+        <span style="float:right;" id="score-computer">Computer Score: ${computerScore}</span>
+    `;
 
     // Display last round results
     let bottomContent = document.getElementById("bottom-box");
     bottomContent.innerHTML = `
-        <p>Last turn result!</p>
-    `
+        <p>${lastTurnResult}</p>
+    `;
     
     let mainContent = document.getElementById("mid-box");
     let newContent;

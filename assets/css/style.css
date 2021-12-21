@@ -71,7 +71,6 @@ hr {
     font-size: 200%;
 }
 
-
 .button {
     font-family: 'Cormorant Upright', Garamond, "Times New Roman";
     background-color: #BFBFC4;
@@ -103,6 +102,14 @@ hr {
     line-height: inherit;
     color:#1E2039;
     font-weight: 800;
+}
+
+#lose, #score-computer {
+    color: #AE3441;
+}
+
+#win, #score-user  {
+    color: #325635;
 }
 
 .social-networks {
