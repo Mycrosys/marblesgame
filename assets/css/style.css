@@ -19,12 +19,6 @@ body {
     background-position: center top;
 }
 
-h1 {
-    font-family: 'Cormorant Upright', Garamond, "Times New Roman";
-    font-size: 350%;
-    text-align: center;
-}
-
 h2 {
     font-family: 'Proza Libre', Helvetica, Arial, sans-serif;
     font-size: 250%;
@@ -36,9 +30,9 @@ hr {
     padding-top: 30px;
 }
 
-#title, #top-box, #mid-box, #bottom-box {
+#top-box, #mid-box, #bottom-box {
     width: 800px;
-    height: 75px;
+    height: 65px;
     background-color: rgb(236, 238, 240, 0.7);
     border: 4px solid #1E2039;
     border-radius: 5px;
@@ -47,7 +41,7 @@ hr {
     text-align: center;
 }
 
-#top-box, #bottom-box {
+#bottom-box {
     visibility: hidden;
     height: 0px;
 }
