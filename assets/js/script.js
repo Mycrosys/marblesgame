@@ -33,18 +33,29 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function chooseMarblesAmount() {
     let mainContent = document.getElementById("mid-box");
-    
+    mainContent.style.height = "435px";
+
     // set to one of the available options (5,10,15,20,25)
     mainContent.innerHTML = `
         <p>Please choose the amount of Marbles each side starts with. More Marbles make for a longer
         game.</p>
         <div id="select-box">
             <select id="value-select">
-                <option value="5">5</option>
-                <option value="10" selected="selected">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-                <option value="25">25</option>
+                <option value="5">5 Marbles</option>
+                <option value="10" selected="selected">10 Marbles</option>
+                <option value="15">15 Marbles</option>
+                <option value="20">20 Marbles</option>
+                <option value="25">25 Marbles</option>
+            </select>
+        </div>
+        <p>Please also choose the difficulty. This will impact the amount of marbles the Computer starts
+         with. Chosing normal will give the Computer the same amount of starting marbles, hard will 
+         multiply that number by 3 and insane by 5.</p>
+        <div id="select-box">
+            <select id="difficulty-select">
+                <option value="1" selected="selected">Normal (x1)</option>
+                <option value="3">Hard (x3)</option>
+                <option value="5">Insane (x5)</option>
             </select>
         </div>
         <button data-type="marblesamount" class="button">Continue</button>
@@ -56,8 +67,12 @@ function chooseMarblesAmount() {
         button.addEventListener("click", function() {
             if (this.getAttribute("data-type")==="marblesamount") {
                 let choosenMarbles = document.getElementById("value-select");
-                userScore = parseInt(choosenMarbles.value);             // set Userscore to selected amount
-                computerScore = parseInt(choosenMarbles.value);         // set Computerscore to selected amount
+                userScore = parseInt(choosenMarbles.value);             // set userScore to selected amount
+                computerScore = parseInt(choosenMarbles.value);         // set computerScore to selected amount
+
+                // increase computerScore by factor of 1, 3 or 5, depending on selected difficulty
+                let difficulty = document.getElementById("difficulty-select"); 
+                computerScore *= parseInt(difficulty.value);
                 startGame();
             }
             else {
@@ -74,7 +89,7 @@ function chooseMarblesAmount() {
  */
 function startGame() {
     
-    // Make the 2 divs (top and bottom) visible for playing and set height
+    // Make the 2 divs (top and bottom) visible for playing and set heights
     let topContent = document.getElementById("top-box");
     topContent.style.visibility = "visible";
     topContent.style.height = "140px";
@@ -83,6 +98,9 @@ function startGame() {
     bottomContent.style.visibility = "visible";
     bottomContent.style.height = "170px";
     
+    let midContent = document.getElementById("mid-box");
+    midContent.style.height = "350px";
+
     lastTurnResult = "Here you will see the results of your last turn.";        // Set last turn result for the first time
 
     playBet();                                                                  // Start betting round
@@ -167,7 +185,7 @@ function setBetField() {
         and can bet up to a maximum of 5 Marbles. However, you can only bet as much Marbles as you
         or the other side has.</p>
         <div id="select-box">
-            <select id="bet-select" style="width:175px;">
+            <select id="bet-select">
                 <option value="1">1 Marble</option>
     `;
     
