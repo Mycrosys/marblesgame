@@ -83,7 +83,15 @@ hr {
     margin: 15px auto;
     box-shadow: 5px 10px;
     font-weight: bold;
-  }
+}
+
+.button:hover {
+    margin: 20px auto;
+    box-shadow: 5px 5px;
+    font-style: italic;
+    background-color: #ffffff;
+}
+
 
 #select-box {
     padding: 25px 0 15px;
