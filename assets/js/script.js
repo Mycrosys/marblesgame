@@ -33,8 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
  */
 function chooseMarblesAmount() {
     let mainContent = document.getElementById("mid-box");
-    mainContent.style.height = "435px";
-
+    
     // set to one of the available options (5,10,15,20,25)
     mainContent.innerHTML = `
         <p>Please choose the amount of Marbles each side starts with. More Marbles make for a longer
@@ -294,7 +293,7 @@ function setGuessField() {
         <p>Now the role changes and you have to take a guess if the Computer chose an Even or
         Odd amount of Marbles to bet against you. Please click on the appropriate Button to 
         make your choice.</p>
-        <div style="margin: 20px 150px 0;">
+        <div id="double-button">
             <span style="float:left;"><button data-type="even" class="button">Guess Even</button></span>
             <span style="float:right;"><button data-type="odd" class="button">Guess Odd</button></span>
         </div>

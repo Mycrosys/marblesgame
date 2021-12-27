@@ -65,7 +65,7 @@ hr {
 }
 
 #mid-box {
-    height: 350px;
+    height: 435px;
 }
 
 #mid-box p {
@@ -100,6 +100,10 @@ hr {
     box-shadow: 5px 5px;
     font-style: italic;
     background-color: #ffffff;
+}
+
+#double-button {
+    margin: 15px 150px 0;
 }
 
 /* Select Boxes */
@@ -155,4 +159,51 @@ hr {
     margin: 10px;
     padding: 10px;
     color: #1E2039;
+}
+
+/* Media queries Sizes 850px-650px */
+
+/* For medium to low size screens from 850px wide and down */
+@media screen and (max-width: 850px) {
+    body {
+        width: 600px;
+    }
+
+    #top-box, #mid-box, #bottom-box {
+        width: 580px;
+    }
+
+    #top-box {
+        font-size: 250%;
+        height: 55px;
+    }
+
+    #top-box span, p {
+        padding: 15px 10px 0px;
+    }
+
+    #mid-box {
+        height: 500px;
+    }
+
+    .button {
+        margin: 25px auto;
+    }
+
+    #double-button {
+        margin: 25px 100px 0;
+    }
+
+    .button:hover {
+        margin: 30px auto;
+    }
+
+    #bottom-box p {
+        font-size: 150%;
+        padding: 20px 10px 0px;
+    }
+
+    .social-networks {
+        width: 580px;
+    }
 }
