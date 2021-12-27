@@ -166,8 +166,8 @@ function setBetField() {
     let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
         <p>Turn ${gameTurn}: Bet your Marbles!</p>
-        <span style="float:left;" id="score-user">Your Score: ${userScore}</span>
-        <span style="float:right;" id="score-computer">Computer Score: ${computerScore}</span>
+        <span class="left" id="score-user">Your Score: ${userScore}</span>
+        <span class="right" id="score-computer">Computer Score: ${computerScore}</span>
     `;
 
     // Display last round results
@@ -276,8 +276,8 @@ function setGuessField() {
     let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
         <p>Turn ${gameTurn}: Guess Even or Odd!</p>
-        <span style="float:left;" id="score-user">Your Score: ${userScore}</span>
-        <span style="float:right;" id="score-computer">Computer Score: ${computerScore}</span>
+        <span class="left" id="score-user">Your Score: ${userScore}</span>
+        <span class="right" id="score-computer">Computer Score: ${computerScore}</span>
     `;
 
     // Display last round results
@@ -294,8 +294,8 @@ function setGuessField() {
         Odd amount of Marbles to bet against you. Please click on the appropriate Button to 
         make your choice.</p>
         <div id="double-button">
-            <span style="float:left;"><button data-type="even" class="button">Guess Even</button></span>
-            <span style="float:right;"><button data-type="odd" class="button">Guess Odd</button></span>
+            <span style="float:left;"><button data-type="even" class="button left">Guess Even</button></span>
+            <span style="float:right;"><button data-type="odd" class="button right">Guess Odd</button></span>
         </div>
     `; 
 
@@ -311,8 +311,8 @@ function setWinnerField() {
     let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
         <p>We have a Winner!</p>
-        <span style="float:left;" id="score-user">Your Score: ${userScore}</span>
-        <span style="float:right;" id="score-computer">Computer Score: ${computerScore}</span>
+        <span class="left" id="score-user">Your Score: ${userScore}</span>
+        <span class="right" id="score-computer">Computer Score: ${computerScore}</span>
     `;
 
     // Display last round results, no quit to start here because we have it on the mid-box
