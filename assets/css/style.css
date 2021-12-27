@@ -1,4 +1,4 @@
-/* Importing Cormorant from Google Font*/
+/* Importing Cormorant and Proza Libre from Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@700&family=Proza+Libre&display=swap');
 
 * {
@@ -6,6 +6,8 @@
     padding: 0;
     border: none;
 } 
+
+/* Body with general settings and spacing + marbles background image */
 
 body {
     width: 820px;
@@ -19,6 +21,8 @@ body {
     background-position: center top;
 }
 
+/* Heading and spacer between boxes (horizontal ruler) */
+
 h2 {
     font-family: 'Cormorant Upright', Garamond, "Times New Roman";
     font-size: 250%;
@@ -29,6 +33,10 @@ h2 {
 hr {
     padding-top: 30px;
 }
+
+/*  Content Boxes, top for scores, mid for playing, bottom for last round
+    results and "quit to start" button. All boxes have a nice 3D effect
+    with the box-shadow property  */
 
 #top-box, #mid-box, #bottom-box {
     width: 800px;
@@ -72,6 +80,8 @@ hr {
     font-size: 200%;
 }
 
+/* Buttons with hover and 3D effect */
+
 .button {
     font-family: 'Cormorant Upright', Garamond, "Times New Roman";
     background-color: #BFBFC4;
@@ -92,12 +102,12 @@ hr {
     background-color: #ffffff;
 }
 
+/* Select Boxes */
 
 #select-box {
     padding: 25px 0 15px;
     margin: 0 auto;
 }
-
 
 #select-box select {
     background-color: rgb(236, 238, 240);
@@ -113,6 +123,8 @@ hr {
     font-weight: 800;
 }
 
+/* Setting colors for Player/Computer Scores and win/lose for results */
+
 #lose, #score-computer {
     color: #AE3441;
 }
@@ -120,6 +132,8 @@ hr {
 #win, #score-user  {
     color: #325635;
 }
+
+/* Social Network Links & Symbols (Awesomefont) in Footer */
 
 .social-networks {
     text-align: center;
