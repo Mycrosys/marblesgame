@@ -111,10 +111,10 @@ function startGame() {
  */
 function playBet() {
     
-    if (userScore===0 || computerScore ===0) {      // check if there is already a winner
-        announceWinner();                           // if there is a winner, announce him/her
+    if (userScore===0 || computerScore ===0) {                                  // check if there is already a winner
+        announceWinner();                                                       // if there is a winner, announce him/her
     } else {
-        setBetField();                              // set up the html for playing the betting round
+        setBetField();                                                          // set up the html for playing the betting round
         
         let buttons = document.getElementsByTagName("button");
 
@@ -133,18 +133,18 @@ function playBet() {
                     }
                                 
                     // calculate new scores depending on right or wrong guess
-                    if (calculateResult(bet, guess)) {              // if true is returned the answer was correct and player loses marbles
+                    if (calculateResult(bet, guess)) {                          // if true is returned the answer was correct and player loses marbles
                         userScore = userScore - bet;
                         computerScore = computerScore + bet;
                         lastTurnResult = `Computer chose right! You <span id="lose">lose ${bet} Marble/s</span>!`;
-                    } else {                                        // if false is returned the answer was wrong and player gains marbles
+                    } else {                                                    // if false is returned the answer was wrong and player gains marbles
                         userScore = userScore + bet;
                         computerScore = computerScore - bet;
                         lastTurnResult = `Computer chose wrong! You <span id="win">win ${bet} Marble/s</span>!`;
                     }
                     
-                    gameTurn++;                                     // Next turn coming up so increase turn counter
-                    playGuess();                                    // start the guessing round
+                    gameTurn++;                                                 // Next turn coming up so increase turn counter
+                    playGuess();                                                // start the guessing round
 
                 } else if (this.getAttribute("data-type")==="quit") {          
                         location.reload();                                      // Check if player presses quit button and reset game by reloading page
@@ -253,11 +253,11 @@ function playGuess() {
                         lastTurnResult = `You chose wrong! You <span id="lose">lose ${bet} Marble/s</span>!`;
                     }
                     
-                    gameTurn++;     // Next turn coming up so increase turn counter
-                    playBet();      // start the betting round
+                    gameTurn++;                                             // Next turn coming up so increase turn counter
+                    playBet();                                              // start the betting round
 
                 } else if (this.getAttribute("data-type")==="quit") {
-                    location.reload();                          // Check if player presses quit button and reset game by reloading page
+                    location.reload();                                      // Check if player presses quit button and reset game by reloading page
                 } else {
                     let buttonType = this.getAttribute("data-type");        // Handler for everything else, should never happen
                     alert(`You clicked ${buttonType}`);
@@ -325,17 +325,17 @@ function setWinnerField() {
     let mainContent = document.getElementById("mid-box");
     let newContent;
 
-    if(userScore===0) {                 // Player has 0 points and loses
+    if(userScore===0) {                         // Player has 0 points and loses
         newContent = `
             <h2>You Lose!</h2>
             <p>Too bad. Sadly, the numbers weren't in your favor. Better luck next time!</p>
         `;
-    } else if (computerScore===0) {     // Computer has 0 points and loses
+    } else if (computerScore===0) {              // Computer has 0 points and loses
         newContent = `
             <h2>You Win!</h2>
             <p>Good job! Now challenge yourself again by winning multiple times in a row!</p>
         `;
-    } else {                            // All other cases, should never happen
+    } else {                                     // All other cases, should never happen
         newContent = `
             <h2>It's a Draw!</h2>
             <p>Honestly, you should have won this. Now try again!</p>
@@ -356,14 +356,14 @@ function setWinnerField() {
 function calculateMaxBet() {
     let maxBet=1;
     
-    if (userScore>=5 && computerScore>=5) {
-        maxBet=5;
+    if (userScore>=5 && computerScore>=5) {                     // maxBet is 5 if both player and computer have equal or more
+        maxBet=5;                                               // than 5 marbles
     } else if (userScore<5 && computerScore>=5) {
-        maxBet=userScore;
-    } else if (userScore>=5 && computerScore<5) {
-        maxBet=computerScore;
+        maxBet=userScore;                                       // if player is below 5, that is the new maxbet (computer and
+    } else if (userScore>=5 && computerScore<5) {               // player cannot be below 5 at the same time)
+        maxBet=computerScore;                                   // if computer is below 5, that is the new maxbet
     } else {
-        alert(`Calculation of maximum Bet Error!`);
+        alert(`Calculation of maximum Bet Error!`);             // Handler for everything else, will never happen
     }
     return maxBet;
 }
@@ -388,7 +388,7 @@ function calculateResult(bet, guess) {
  */
 function announceWinner() {
     
-    setWinnerField();       // set up the html for the winning announcement
+    setWinnerField();                                               // set up the html for the winning announcement
 
     let buttons = document.getElementsByTagName("button");
 
@@ -414,28 +414,28 @@ function calculateBet() {
     if (calculateMaxBet()===1 || calculateMaxBet()===2 || calculateMaxBet()===4) {      // For maxbet 1,2 and 4 the chance is even (1 always returns
         return Math.floor(Math.random() * calculateMaxBet() +1);                        // a 1, 2 and 4 have perfect ratio between even and odd numbers.
     } else if (calculateMaxBet()===3) {
-        let cointoss = Math.floor(Math.random() * 2);                                   // toss another coin for maxbet 3
+        let coinToss = Math.floor(Math.random() * 2);                                   // toss another coin for maxbet 3
 
-        if (cointoss===0) {
+        if (coinToss===0) {
             return 2;                                                                   // if even, there is only one even number between 1 and 3, which is 2
-        } else if (cointoss===1) {                                                      // otherwise toss a coin again then get number out of array
-            let arrayodd = [1,3]
-            let cointossodd = Math.floor(Math.random() * 2);
-            return arrayodd[cointossodd];
+        } else if (coinToss===1) {                                                      // otherwise toss a coin again then get number out of array
+            let arrayOdd = [1,3]
+            let coinTossOdd = Math.floor(Math.random() * 2);
+            return arrayOdd[coinTossOdd];
         } else {
             alert(`Unhandled calculateBet error!`);                                     // handling everything else, should never happen
         }
     } else if (calculateMaxBet()===5) {
-        let cointoss = Math.floor(Math.random() * 2);
+        let coinToss = Math.floor(Math.random() * 2);
 
-        if (cointoss===0) {                                                             // with maxbet 5 there are 2 even numbers (2 and 4), so do another
-            let arrayeven = [2,4]                                                       // cointoss then choose out of array
-            let cointosseven = Math.floor(Math.random() * 2);
-            return arrayeven[cointosseven];
-        } else if (cointoss===1) {                                                      
-            let arrayodd = [1,3,5]                                                      // same as above with odd numbers, just this time we can chose out
-            let cointossodd = Math.floor(Math.random() * 3);                            // of 1,3 and 5
-            return arrayodd[cointossodd];
+        if (coinToss===0) {                                                             // with maxbet 5 there are 2 even numbers (2 and 4), so do another
+            let arrayEven = [2,4]                                                       // cointoss then choose out of array
+            let coinTossEven = Math.floor(Math.random() * 2);
+            return arrayEven[coinTossEven];
+        } else if (coinToss===1) {                                                      
+            let arrayOdd = [1,3,5]                                                      // same as above with odd numbers, just this time we can chose out
+            let coinTossOdd = Math.floor(Math.random() * 3);                            // of 1,3 and 5
+            return arrayOdd[coinTossOdd];
         } else {
             alert(`Unhandled calculateBet error!`);                                     // handling everything else, should never happen
         }
