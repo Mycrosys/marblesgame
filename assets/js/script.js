@@ -215,7 +215,7 @@ function playGuess() {
         setGuessField();        // set up the html for playing the guessing round
 
         // computer makes a random bet of marbles between 1 and the max amount allowed
-        let bet = Math.floor(Math.random() * calculateMaxBet() +1);
+        let bet = calculateBet();
 
         let buttons = document.getElementsByTagName("button");
         
@@ -402,5 +402,44 @@ function announceWinner() {
                 alert(`You clicked ${buttonType}`);
             }
         });
+    }
+}
+
+/**
+ * Generate a number between 1 and maxbet with a perfect 50-50 chance
+ * between choosing an even or odd number
+ */
+function calculateBet() {
+    
+    if (calculateMaxBet()===1 || calculateMaxBet()===2 || calculateMaxBet()===4) {      // For maxbet 1,2 and 4 the chance is even (1 always returns
+        return Math.floor(Math.random() * calculateMaxBet() +1);                        // a 1, 2 and 4 have perfect ratio between even and odd numbers.
+    } else if (calculateMaxBet()===3) {
+        let cointoss = Math.floor(Math.random() * 2);                                   // toss another coin for maxbet 3
+
+        if (cointoss===0) {
+            return 2;                                                                   // if even, there is only one even number between 1 and 3, which is 2
+        } else if (cointoss===1) {                                                      // otherwise toss a coin again then get number out of array
+            let arrayodd = [1,3]
+            let cointossodd = Math.floor(Math.random() * 2);
+            return arrayodd[cointossodd];
+        } else {
+            alert(`Unhandled calculateBet error!`);                                     // handling everything else, should never happen
+        }
+    } else if (calculateMaxBet()===5) {
+        let cointoss = Math.floor(Math.random() * 2);
+
+        if (cointoss===0) {                                                             // with maxbet 5 there are 2 even numbers (2 and 4), so do another
+            let arrayeven = [2,4]                                                       // cointoss then choose out of array
+            let cointosseven = Math.floor(Math.random() * 2);
+            return arrayeven[cointosseven];
+        } else if (cointoss===1) {                                                      
+            let arrayodd = [1,3,5]                                                      // same as above with odd numbers, just this time we can chose out
+            let cointossodd = Math.floor(Math.random() * 3);                            // of 1,3 and 5
+            return arrayodd[cointossodd];
+        } else {
+            alert(`Unhandled calculateBet error!`);                                     // handling everything else, should never happen
+        }
+    } else {
+        alert(`Unhandled calculateBet error!`);                                         // handling everything else, should never happen
     }
 }
