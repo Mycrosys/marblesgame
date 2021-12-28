@@ -129,7 +129,7 @@ hr {
 
 /* Setting colors for Player/Computer Scores and win/lose for results */
 
-#lose, #score-computer {
+#lose, #score-computer, #warning {
     color: #AE3441;
 }
 
@@ -299,7 +299,7 @@ hr {
     }
 
     #mid-box {
-        height: 550px;
+        height: 630px;
     }
 
     .button {
