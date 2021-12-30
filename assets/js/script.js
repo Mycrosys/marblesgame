@@ -419,7 +419,7 @@ function calculateBet() {
         if (coinToss===0) {
             return 2;                                                                   // if even, there is only one even number between 1 and 3, which is 2
         } else if (coinToss===1) {                                                      // otherwise toss a coin again then get number out of array
-            let arrayOdd = [1,3]
+            let arrayOdd = [1,3];
             let coinTossOdd = Math.floor(Math.random() * 2);
             return arrayOdd[coinTossOdd];
         } else {
@@ -429,11 +429,11 @@ function calculateBet() {
         let coinToss = Math.floor(Math.random() * 2);
 
         if (coinToss===0) {                                                             // with maxbet 5 there are 2 even numbers (2 and 4), so do another
-            let arrayEven = [2,4]                                                       // cointoss then choose out of array
+            let arrayEven = [2,4];                                                      // cointoss then choose out of array
             let coinTossEven = Math.floor(Math.random() * 2);
             return arrayEven[coinTossEven];
         } else if (coinToss===1) {                                                      
-            let arrayOdd = [1,3,5]                                                      // same as above with odd numbers, just this time we can chose out
+            let arrayOdd = [1,3,5];                                                     // same as above with odd numbers, just this time we can chose out
             let coinTossOdd = Math.floor(Math.random() * 3);                            // of 1,3 and 5
             return arrayOdd[coinTossOdd];
         } else {

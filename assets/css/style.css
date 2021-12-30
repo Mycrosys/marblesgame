@@ -130,11 +130,11 @@ hr {
 /* Setting colors for Player/Computer Scores and win/lose for results */
 
 #lose, #score-computer, #warning {
-    color: #AE3441;
+    color: #5F1C21;
 }
 
 #win, #score-user  {
-    color: #325635;
+    color: #233924;
 }
 
 .left {

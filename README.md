@@ -120,7 +120,31 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
     - GitHub is used to store the project's code after being pushed from Git.
 1. [Gimp:](https://www.gimp.org/)
     - Gimp was used to create, modify and resize all images on this website.
-1. [Balsamiq](https://balsamiq.com/)*
-  - Balsamiq was used to create [Wireframes](#wireframes) for the project.
+1. [Balsamiq](https://balsamiq.com/)
+    - Balsamiq was used to create [Wireframes](#wireframes) for the project.
+
+<br>
+
+## Testing
+
+### General Testing
+
+1. The W3C Markup Validator and W3C CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+    - [W3C Markup Validator](https://validator.w3.org/#validate_by_input) - [Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmycrosys.github.io%2Fmarblesgame%2F)
+    - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmycrosys.github.io%2Fmarblesgame%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+    - [JSHint](https://jshint.com/) - Results below
+    <h2><img src="./assets/images/jshint_screenshot.jpg" alt="Picture of the JSHint validation results"></h2>
+    The warnings refer to functions that reference outer scoped variables and functions. I could re-declare the variables and functions within the function, but that's unnecessary. Everything is named and commented both descriptively and appropriately.
+    <br><br>
+
+2. Contrast and WCAG: The [Contrast Checker on WebAIM](https://webaim.org/resources/contrastchecker/) was used to check for WCAG AAA to maximize Accessibility.
+    - Text Color on the site Background: [Results](https://webaim.org/resources/contrastchecker/?fcolor=1E2039&bcolor=FFFFFF).
+    I understand, that it is difficult to test this with 70% Opacity of the white background, but considering that 100% opacity hits 15+ in WCAG, this is more than sufficient.
+    - Text Color on Button Background: [Results](https://webaim.org/resources/contrastchecker/?fcolor=1E2039&bcolor=BFBFC4)
+    - Red/Computer Score color on site Background: [Results](https://webaim.org/resources/contrastchecker/?fcolor=5F1C21&bcolor=FFFFFF)
+    - Green/Player Score color on site Background: [Results](https://webaim.org/resources/contrastchecker/?fcolor=233924&bcolor=FFFFFF)
+    <br><br>
+
+3. Resolution and Scaling were tested with Google Dev tools down to the lowest width device (Galaxy Fold, 280px) to ensure the website works flawlessly on all resolutions 280px and above.
 
 <br>
