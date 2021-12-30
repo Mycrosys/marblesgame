@@ -221,7 +221,7 @@ hr {
     }
 }
 
-/* For medium to low size screens from 650px wide and down */
+/* For medium to low size screens from 650px-450px wide */
 @media screen and (max-width: 650px) {
     body {
         width: 440px;

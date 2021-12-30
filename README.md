@@ -81,3 +81,21 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
         <h2><img src="./assets/images/wireframe_mobile.png" alt="Wireframe of the guessing page on a mobile device"></h2><br>
     
 <br>
+
+## Features
+
+###   Responsive on all device sizes
+
+- The Page adjusts itself to 4 different sizes devices over 850px wide (most common Desktop/Laptop/Tablet Display Resolutions) , 850px to 650px wide (bigger Tablet/mobile resolutions), 650px-450px (most mobile resolutions) and 450px to around 280px (for very small resolution mobiles).
+
+- For a view of the Page on different devices, the Picture at the [Top](#top) of the Page has a good overview. The following are 3 example resolution screenshot, emulating different sizes on google chrome / windows 10.
+    1.  Desktop Resolution
+            <h2><img src="./assets/images/webpage_desktop.jpg" alt="Picture of the page on Desktop Resolution"></h2><br>
+    2.  Tablet Resolution
+            <h2><img src="./assets/images/webpage_tablet.jpg" alt="Picture of the page on Tablet Resolution"></h2><br>
+    3.  Phone Resolution
+            <h2><img src="./assets/images/webpage_phone.jpg" alt="Picture of the page on Phone Resolution"></h2><br>
+
+###   Interactive elements
+
+- Buttons: The Buttons are used to navigate through the whole Page and play the game and are visible on any page. On the first page they lead you to the settings and from there to the start of the game. From then on you always have a "Quit" button on the bottom of the page, that reloads the site, bringing you back to the start. Other than that you use them to confirm your bet or take a guess on the computer's amount of bet marbles (even or odd). On the winning page the Quit button moves from the bottom box to the mid-box to give you an easier access to restart the game (because was implemented the same as the quit button, it will reload the page).
