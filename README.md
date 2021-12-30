@@ -66,3 +66,18 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 <br>
 
+*   ### <a name="wireframes">Wireframes</a>
+    -   First Page Wireframe
+        <h2><img src="./assets/images/wireframe_first.png" alt="Wireframe of the first page the user is seeing when accessing the page on desktop devices"></h2><br>
+    -   Settings Page Wireframe
+        <h2><img src="./assets/images/wireframe_settings.png" alt="Wireframe of the setting page on desktop devices"></h2><br>
+    -   Betting Page Wireframe
+        <h2><img src="./assets/images/wireframe_bet.png" alt="Wireframe of the betting round page on desktop devices"></h2><br>
+    -   Guessing Page Wireframe
+        <h2><img src="./assets/images/wireframe_guess.png" alt="Wireframe of the guessing round page on desktop devices"></h2><br>
+    -   Winning Page Wireframe
+        <h2><img src="./assets/images/wireframe_winner.png" alt="Wireframe of the winning page on desktop devices"></h2><br>
+    -   Mobile Wireframe
+        <h2><img src="./assets/images/wireframe_mobile.png" alt="Wireframe of the guessing page on a mobile device"></h2><br>
+    
+<br>
