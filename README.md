@@ -82,6 +82,41 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
     
 <br>
 
+## The Game
+
+###   Basics
+-   This is a game of chance with no skill involved. You are playing against the computer and both sides start with a certain amount of marbles. You do this by one side betting a certain amount of the marbles you have left and the other side guessing if that amount is an even or odd number.
+
+###   Starting the Game
+-   Starting the game happens when you press the "Start Game" Button. You will then have to choose the amount of starting marbles and the difficulty. After you press "Continue" the core gameplay loop starts.
+
+###   Setting options
+-   There are 2 Settings: Starting marbles and difficulty
+-   Starting marbles decides with how many marbles you and the computer starts. The options are 5/10(default)/15/20 and 25.
+-   The difficulty is a flat multiplier on the computer marbles. The options are Normal (1x)/Hard (x3) and Insane (x5).
+-   For example, if you chose 20 starting marbles and Hard difficulty, you would start with 20 marbles, while the computer starts with 60 (20x3)
+<h2><img src="./assets/images/thegame_settings.jpg" alt="Picture of available Settings"></h2><br>
+
+###   Core Gameplay Loop
+-   You start betting your marbles. The computer will then decide (randomly) if he thinks that amount is even or odd. If the computer is right, you will lose the amount of marbles you bet. If the computer is wrong, you will win the amount of marbles you bet.
+-   The role then switches and the computer bets a random amount of marbles. You have to choose if that amount is even or odd and will win that amount of marbles if you are right and lose them if you are wrong.
+-   Then you are back to betting your own marbles. This continues until either you or the computer wins the game.
+<h2><img src="./assets/images/thegame_bet.jpg" alt="Picture of the Betting Interface"></h2><br>
+<h2><img src="./assets/images/thegame_guess.jpg" alt="Picture of the Guessing Even or Odd Interface"></h2><br>
+
+###   Max amount of betable Marbles
+-   The amount of marbles you can bet is limited. This prevents you from going all in from the start and leaving it to a single roll (unless you decide to play with 5 starting marbles).
+-   The top amount of marbles you can bet in one go is 5.
+-   You cannot bet more marbles than you have. E.g. if you have only 3 marbles left your options will be limited to betting 1,2 or 3 marbles.
+-   Betting more marbles than your opponent has is also not possible. If your opponent has only 2 marbles left, you can only bet 1 or 2 marbles.
+<h2><img src="./assets/images/thegame_maxbet.jpg" alt="Picture of reduced betting options due to score"></h2><br>
+
+###   Winning and Losing
+-   You win or lose the game when either the computer or you reach 0 marbles.
+<h2><img src="./assets/images/thegame_winner.jpg" alt="Picture of winner announcement"></h2><br>
+
+<br>
+
 ## Features
 
 ###   Responsive on all device sizes
@@ -185,7 +220,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 ### Further Testing
 
--   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge, Firefox, Opera GX and Safari browsers.
+-   The Website was tested on Google Chrome, Microsoft Edge, Firefox, Opera GX and Safari browsers.
 -   The Website was viewed on a variety of devices such as Desktop, Laptop, iPad and different Android Phones.
 -   Friends were asked to review the site to point out any bugs and/or user experience issues.
 
@@ -195,6 +230,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 -   On Desktop Devices with a very high resolution (above 2600px wide, e.g. a full screen window on a 4k or Ultra Wide Display), the Background Image is no longer covering 100%.
 -   On Desktop Devices with a very low resolution (below 280px wide), the consistency of the website can no longer be upheld. These kind of devices shouldn't be supported by modern operating systems anymore and should be extremely rare.
+-   The site does not work on Internet Explorer
 
 <br>
 
@@ -232,3 +268,21 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
 <br>
+
+## Credits
+
+### Images and Media
+
+- The Marbles Background Image comes from [This Post](https://wallpapercave.com/w/wp2085666) from [Wallpaper Cave](https://wallpapercave.com/).
+
+- The Puzzle Favicon next to the Websites Name in the Tab comes from the [This Post](https://www.freefavicon.com/freefavicons/icons/iconinfo/category-puzzle-152-211911.html) from [freefavicon](https://www.freefavicon.com/).
+
+### Readme
+
+-   The Basic Structure of the Readme was taken from [Code Institute's Sample Readme](https://github.com/Code-Institute-Solutions/SampleREADME/blob/master/README.md).
+
+### Acknowledgements
+
+-   My Mentor for continuous helpful feedback.
+
+-   My Peers in Code Institute's Slack channel for their feedback.
