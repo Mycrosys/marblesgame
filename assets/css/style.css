@@ -152,7 +152,8 @@ hr {
     text-align: center;
     width: 800px;
     height: 75px;
-    background-color: rgb(236, 238, 240, 0.8);
+    background: rgb(236, 238, 240);                 /* fallback for Internet explorer */
+    background-color: rgb(236, 238, 240, 0.7);
     border: 4px solid #1E2039;
     border-radius: 5px;
     margin: 0 auto;
