@@ -148,3 +148,87 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 3. Resolution and Scaling were tested with Google Dev tools down to the lowest width device (Galaxy Fold, 280px) to ensure the website works flawlessly on all resolutions 280px and above.
 
 <br>
+
+### Google Lighthouse Testing
+
+1. Results
+- Desktop:
+  <h2><img src="./assets/images/lighthouse_result_desktop.jpg" alt="Results of Google Lighthouse test for Desktop devices"></h2>
+- Mobile:
+  <h2><img src="./assets/images/lighthouse_result_mobile.jpg" alt="Results of Google Lighthouse test for Mobile devices"></h2>
+
+2. There is an error reported in the console of Google Lighthouse: "Error with Permissions-Policy header: Unrecognized feature: 'interest-cohort'." This isn due to FLoC being disabled on github pages (used for collecting information for ads by google). It does however not change the function or displaying on the site.
+    <h2><img src="./assets/images/error_cohort.jpg" alt="Errors reported by Google Lighthouse on testing"></h2>
+
+<br>
+
+### Testing User Stories from User Experience (UX) Section
+
+-   #### First Time Visitor Goals
+
+    1. As a First Time Visitor, I want to easily understand the main purpose of the site and learn how the game works.
+
+        1. Upon entering the site, users are automatically greeted with a clean and easily readable Introduction text describing the game they are about to play. The Background sets the mood and style with its multicolored marbles.
+        2. The user has only one option to proceed. He/She can click the button to start the game and is then funneled through the gameplay loop which all are confirmed by the press of a button again. Once a Winner is decided, another button press will reload the page so the user can start over.
+
+    2. As a First Time Visitor, I want the game to be explained well and easily play through every part of it.
+
+        1. The Site is very linear and proceeds with button presses. At every step, there is a description of what the user has to do, so he always knows how the game is going to proceed and how he/she can win or may lose.
+        <br><br>
+-   #### Returning Visitor Goals
+
+    1. As a Returning Visitor, I want to quickly get into a game and play it in my break time or while I wait for something IRL.
+
+        1. After the site is loaded, the user is only 2 button presses away from starting a game. He/She can also modify the game if there is a wish for a bigger challenge or longer game.
+
+<br>
+
+### Further Testing
+
+-   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge, Firefox, Opera GX and Safari browsers.
+-   The Website was viewed on a variety of devices such as Desktop, Laptop, iPad and different Android Phones.
+-   Friends were asked to review the site to point out any bugs and/or user experience issues.
+
+<br>
+
+### Known Bugs
+
+-   On Desktop Devices with a very high resolution (above 2600px wide, e.g. a full screen window on a 4k or Ultra Wide Display), the Background Image is no longer covering 100%.
+-   On Desktop Devices with a very low resolution (below 280px wide), the consistency of the website can no longer be upheld. These kind of devices shouldn't be supported by modern operating systems anymore and should be extremely rare.
+
+<br>
+
+## Deployment
+
+### GitHub Pages
+
+The project was deployed to GitHub Pages using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/Mycrosys/Hachiko)
+2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+4. Under "Source", click the drop down called "None" and select "Main Branch".
+5. The page will automatically refresh.
+6. Scroll back down through the page to locate the now published site [link](https://mycrosys.github.io/Hachiko/) in the "GitHub Pages" section.
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/Mycrosys/Hachiko)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/Mycrosys/Hachiko)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+7. Press Enter. Your local clone will be created.
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+<br>
