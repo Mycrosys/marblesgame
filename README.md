@@ -85,7 +85,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 ## The Game
 
 ###   Basics
--   This is a game of chance with no skill involved. You are playing against the computer and both sides start with a certain amount of marbles. You do this by one side betting a certain amount of the marbles you have left and the other side guessing if that amount is an even or odd number.
+- This is a game of chance with no skill involved. You are playing against the computer and both sides start with a certain amount of marbles. You do this by one side betting a certain amount of the marbles you have left and the other side guessing if that amount is an even or odd number.
 
 ###   Starting the Game
 -   Starting the game happens when you press the "Start Game" Button. You will then have to choose the amount of starting marbles and the difficulty. After you press "Continue" the core gameplay loop starts.
@@ -134,6 +134,9 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 ###   Interactive elements
 
 - Buttons: The Buttons are used to navigate through the whole Page and play the game and are visible on any page. On the first page they lead you to the settings and from there to the start of the game. From then on you always have a "Quit" button on the bottom of the page, that reloads the site, bringing you back to the start. Other than that you use them to confirm your bet or take a guess on the computer's amount of bet marbles (even or odd). On the winning page the Quit button moves from the bottom box to the mid-box to give you an easier access to restart the game (because was implemented the same as the quit button, it will reload the page).
+- Links: Text links are only available in the social media box on the bottom of the page. Every Link has the rel="noopener" attribute for security reasons and opens in a new page.
+
+<br>
 
 ## Technologies Used
 
@@ -230,7 +233,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 -   On Desktop Devices with a very high resolution (above 2600px wide, e.g. a full screen window on a 4k or Ultra Wide Display), the Background Image is no longer covering 100%.
 -   On Desktop Devices with a very low resolution (below 280px wide), the consistency of the website can no longer be upheld. These kind of devices shouldn't be supported by modern operating systems anymore and should be extremely rare.
--   The site does not work on Internet Explorer
+-   The site does not work on Internet Explorer. The Start Game Button is unresponsive. In addition, the opacity of the boxes is not supported and is therefore using the same color as solid as a fallback instead of the semi-transparent one.
 
 <br>
 
