@@ -136,7 +136,11 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 - Buttons: The Buttons are used to navigate through the whole Page and play the game and are visible on any page. On the first page they lead you to the settings and from there to the start of the game. From then on you always have a "Quit" button on the bottom of the page, that reloads the site, bringing you back to the start. Other than that you use them to confirm your bet or take a guess on the computer's amount of bet marbles (even or odd). On the winning page the Quit button moves from the bottom box to the mid-box to give you an easier access to restart the game (because was implemented the same as the quit button, it will reload the page).
 - Links: Text links are only available in the social media box on the bottom of the page. Every Link has the rel="noopener" attribute for security reasons and opens in a new page.
 
-<br>
+###   Error Handling
+
+- All possible exceptions will throw an Alert Error Message. However, it should never come that far and is only done in case something unexpected happens.
+- No Javascript active/supported: The starting Page will throw a warning in red at the user if Javascript is not enabled or supported in the current Browser.
+<h2><img src="./assets/images/webpage_nojs.jpg" alt="Picture of the error message when javascript isn't available"></h2><br>
 
 ## Technologies Used
 
