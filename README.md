@@ -4,7 +4,7 @@
 
 This is a Minigame website about keeping your marbles and not losing it. It is designed to be a game of chance and not a game of skill, so everything is based on you getting lucky with the numbers. The whole game takes place on a single website, with Javascript handling both the DOM and the actual calculations of the gameplay. It is responsive on both Desktop and mobile devices and easy to play both for first-time and returning visitors. The main target audience are people looking for a quick game to play during a break or while waiting in a line or for a bus on the go.
 
-<h2 align="center"><img src="./assets/images/website_marblesgame.jpg" alt="The Marbles Game Webpage on multiple devices"></h2>
+<h2 align="center"><img src="./docs/images/website_marblesgame.jpg" alt="The Marbles Game Webpage on multiple devices"></h2>
 
 ## User Experience (UX)
 
@@ -68,17 +68,17 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 *   ### <a name="wireframes">Wireframes</a>
     -   First Page Wireframe
-        <h2><img src="./assets/images/wireframe_first.png" alt="Wireframe of the first page the user is seeing when accessing the page on desktop devices"></h2><br>
+        <h2><img src="./docs/images/wireframe_first.png" alt="Wireframe of the first page the user is seeing when accessing the page on desktop devices"></h2><br>
     -   Settings Page Wireframe
-        <h2><img src="./assets/images/wireframe_settings.png" alt="Wireframe of the setting page on desktop devices"></h2><br>
+        <h2><img src="./docs/images/wireframe_settings.png" alt="Wireframe of the setting page on desktop devices"></h2><br>
     -   Betting Page Wireframe
-        <h2><img src="./assets/images/wireframe_bet.png" alt="Wireframe of the betting round page on desktop devices"></h2><br>
+        <h2><img src="./docs/images/wireframe_bet.png" alt="Wireframe of the betting round page on desktop devices"></h2><br>
     -   Guessing Page Wireframe
-        <h2><img src="./assets/images/wireframe_guess.png" alt="Wireframe of the guessing round page on desktop devices"></h2><br>
+        <h2><img src="./docs/images/wireframe_guess.png" alt="Wireframe of the guessing round page on desktop devices"></h2><br>
     -   Winning Page Wireframe
-        <h2><img src="./assets/images/wireframe_winner.png" alt="Wireframe of the winning page on desktop devices"></h2><br>
+        <h2><img src="./docs/images/wireframe_winner.png" alt="Wireframe of the winning page on desktop devices"></h2><br>
     -   Mobile Wireframe
-        <h2><img src="./assets/images/wireframe_mobile.png" alt="Wireframe of the guessing page on a mobile device"></h2><br>
+        <h2><img src="./docs/images/wireframe_mobile.png" alt="Wireframe of the guessing page on a mobile device"></h2><br>
     
 <br>
 
@@ -95,25 +95,25 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 -   Starting marbles decides with how many marbles you and the computer starts. The options are 5/10(default)/15/20 and 25.
 -   The difficulty is a flat multiplier on the computer marbles. The options are Normal (1x)/Hard (x3) and Insane (x5).
 -   For example, if you chose 20 starting marbles and Hard difficulty, you would start with 20 marbles, while the computer starts with 60 (20x3)
-<h2><img src="./assets/images/thegame_settings.jpg" alt="Picture of available Settings"></h2><br>
+<h2><img src="./docs/images/thegame_settings.jpg" alt="Picture of available Settings"></h2><br>
 
 ###   Core Gameplay Loop
 -   You start betting your marbles. The computer will then decide (randomly) if he thinks that amount is even or odd. If the computer is right, you will lose the amount of marbles you bet. If the computer is wrong, you will win the amount of marbles you bet.
 -   The role then switches and the computer bets a random amount of marbles. You have to choose if that amount is even or odd and will win that amount of marbles if you are right and lose them if you are wrong.
 -   Then you are back to betting your own marbles. This continues until either you or the computer wins the game.
-<h2><img src="./assets/images/thegame_bet.jpg" alt="Picture of the Betting Interface"></h2><br>
-<h2><img src="./assets/images/thegame_guess.jpg" alt="Picture of the Guessing Even or Odd Interface"></h2><br>
+<h2><img src="./docs/images/thegame_bet.jpg" alt="Picture of the Betting Interface"></h2><br>
+<h2><img src="./docs/images/thegame_guess.jpg" alt="Picture of the Guessing Even or Odd Interface"></h2><br>
 
 ###   Max amount of betable Marbles
 -   The amount of marbles you can bet is limited. This prevents you from going all in from the start and leaving it to a single roll (unless you decide to play with 5 starting marbles).
 -   The top amount of marbles you can bet in one go is 5.
 -   You cannot bet more marbles than you have. E.g. if you have only 3 marbles left your options will be limited to betting 1,2 or 3 marbles.
 -   Betting more marbles than your opponent has is also not possible. If your opponent has only 2 marbles left, you can only bet 1 or 2 marbles.
-<h2><img src="./assets/images/thegame_maxbet.jpg" alt="Picture of reduced betting options due to score"></h2><br>
+<h2><img src="./docs/images/thegame_maxbet.jpg" alt="Picture of reduced betting options due to score"></h2><br>
 
 ###   Winning and Losing
 -   You win or lose the game when either the computer or you reach 0 marbles.
-<h2><img src="./assets/images/thegame_winner.jpg" alt="Picture of winner announcement"></h2><br>
+<h2><img src="./docs/images/thegame_winner.jpg" alt="Picture of winner announcement"></h2><br>
 
 <br>
 
@@ -125,11 +125,11 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 - For a view of the Page on different devices, the Picture at the [Top](#top) of the Page has a good overview. The following are 3 example resolution screenshot, emulating different sizes on google chrome / windows 10.
     1.  Desktop Resolution
-            <h2><img src="./assets/images/webpage_desktop.jpg" alt="Picture of the page on Desktop Resolution"></h2><br>
+            <h2><img src="./docs/images/webpage_desktop.jpg" alt="Picture of the page on Desktop Resolution"></h2><br>
     2.  Tablet Resolution
-            <h2><img src="./assets/images/webpage_tablet.jpg" alt="Picture of the page on Tablet Resolution"></h2><br>
+            <h2><img src="./docs/images/webpage_tablet.jpg" alt="Picture of the page on Tablet Resolution"></h2><br>
     3.  Phone Resolution
-            <h2><img src="./assets/images/webpage_phone.jpg" alt="Picture of the page on Phone Resolution"></h2><br>
+            <h2><img src="./docs/images/webpage_phone.jpg" alt="Picture of the page on Phone Resolution"></h2><br>
 
 ###   Interactive elements
 
@@ -140,7 +140,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 - All possible exceptions will throw an Alert Error Message. However, it should never come that far and is only done in case something unexpected happens.
 - No Javascript active/supported: The starting Page will throw a warning in red at the user if Javascript is not enabled or supported in the current Browser.
-<h2><img src="./assets/images/webpage_nojs.jpg" alt="Picture of the error message when javascript isn't available"></h2><br>
+<h2><img src="./docs/images/webpage_nojs.jpg" alt="Picture of the error message when javascript isn't available"></h2><br>
 
 ## Technologies Used
 
@@ -175,7 +175,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
     - [W3C Markup Validator](https://validator.w3.org/#validate_by_input) - [Results](https://validator.w3.org/nu/?doc=https%3A%2F%2Fmycrosys.github.io%2Fmarblesgame%2F)
     - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fmycrosys.github.io%2Fmarblesgame%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
     - [JSHint](https://jshint.com/) - Results below
-    <h2><img src="./assets/images/jshint_screenshot.jpg" alt="Picture of the JSHint validation results"></h2>
+    <h2><img src="./docs/images/jshint_screenshot.jpg" alt="Picture of the JSHint validation results"></h2>
     The warnings refer to functions that reference outer scoped variables and functions. I could re-declare the variables and functions within the function, but that's unnecessary. Everything is named and commented both descriptively and appropriately.
     <br><br>
 
@@ -195,12 +195,12 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 1. Results
 - Desktop:
-  <h2><img src="./assets/images/lighthouse_result_desktop.jpg" alt="Results of Google Lighthouse test for Desktop devices"></h2>
+  <h2><img src="./docs/images/lighthouse_result_desktop.jpg" alt="Results of Google Lighthouse test for Desktop devices"></h2>
 - Mobile:
-  <h2><img src="./assets/images/lighthouse_result_mobile.jpg" alt="Results of Google Lighthouse test for Mobile devices"></h2>
+  <h2><img src="./docs/images/lighthouse_result_mobile.jpg" alt="Results of Google Lighthouse test for Mobile devices"></h2>
 
 2. There is an error reported in the console of Google Lighthouse: "Error with Permissions-Policy header: Unrecognized feature: 'interest-cohort'." This isn due to FLoC being disabled on github pages (used for collecting information for ads by google). It does however not change the function or displaying on the site.
-    <h2><img src="./assets/images/error_cohort.jpg" alt="Errors reported by Google Lighthouse on testing"></h2>
+    <h2><img src="./docs/images/error_cohort.jpg" alt="Errors reported by Google Lighthouse on testing"></h2>
 
 <br>
 
