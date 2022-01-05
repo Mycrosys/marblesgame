@@ -9,7 +9,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 <br><br>
 
 ## Table of Contents
-### I. User Experience
+### I. [User Experience (UX)](#userxp)
 -   [Five Planes of UXD](#fiveplanes)
 -   [Design](#design)
 -   [User Stories](#userstories)
@@ -17,30 +17,24 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 <br>
 
-### II. The Game
--   [Basics](#thegamebasics)
--   [Starting the Game](#thegamestarting)
--   [Setting options](#thegamesettings)
--   [Core Gameplay Loop](#thegamegameplayloop)
--   [Max amount of betable Marbles](#thegamemaxbet)
--   [Winning and Losing](#thegamewinning)
+### II. [The Game](#thegame)
 
 <br>
 
-### III. Features
+### III. [Features](#features)
 -   [Responsive on all device sizes](#responsive)
 -   [Interactive elements](#interactive)
 -   [Error Handling](#errorhandling)
 
 <br>
 
-### IV. Technologies Used
+### IV. [Technologies Used](#technology)
 -   [Languages Used](#languages)
 -   [Frameworks, Libraries & Programs Used](#usedtools)
 
 <br>
 
-### V. Testing
+### V. [Testing](#testing)
 -   [General Testing](#generaltesting)
 -   [Google Lighthouse Testing](#lighthousetesting)
 -   [Testing User Stories from User Experience (UX) Section](#userstoriestesting)
@@ -57,7 +51,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 <br><br>
 
-## User Experience (UX)
+## [User Experience (UX)](#userxp)
 
 *   ### <a name="fiveplanes">Five Planes of UXD</a>
     -   #### Strategy Plane
@@ -129,42 +123,42 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
     
 <br>
 
-## The Game
+## <a name="thegame">The Game</a>
 
-###   <a name="thegamebasics">Basics</a>
+###   Basics
 - This is a game of chance with no skill involved. You are playing against the computer and both sides start with a certain amount of marbles. You do this by one side betting a certain amount of the marbles you have left and the other side guessing if that amount is an even or odd number.
 
-###   <a name="thegamestarting">Starting the Game</a>
+###   Starting the Game
 -   Starting the game happens when you press the "Start Game" Button. You will then have to choose the amount of starting marbles and the difficulty. After you press "Continue" the core gameplay loop starts.
 
-###   <a name="thegamesettings">Setting options</a>
+###   Setting options
 -   There are 2 Settings: Starting marbles and difficulty
 -   Starting marbles decides with how many marbles you and the computer starts. The options are 5/10(default)/15/20 and 25.
 -   The difficulty is a flat multiplier on the computer marbles. The options are Normal (1x)/Hard (x3) and Insane (x5).
 -   For example, if you chose 20 starting marbles and Hard difficulty, you would start with 20 marbles, while the computer starts with 60 (20x3)
 <h2><img src="./docs/images/thegame_settings.jpg" alt="Picture of available Settings"></h2><br>
 
-###   <a name="thegamegameplayloop">Core Gameplay Loop</a>
+###   Core Gameplay Loop
 -   You start betting your marbles. The computer will then decide (randomly) if he thinks that amount is even or odd. If the computer is right, you will lose the amount of marbles you bet. If the computer is wrong, you will win the amount of marbles you bet.
 -   The role then switches and the computer bets a random amount of marbles. You have to choose if that amount is even or odd and will win that amount of marbles if you are right and lose them if you are wrong.
 -   Then you are back to betting your own marbles. This continues until either you or the computer wins the game.
 <h2><img src="./docs/images/thegame_bet.jpg" alt="Picture of the Betting Interface"></h2><br>
 <h2><img src="./docs/images/thegame_guess.jpg" alt="Picture of the Guessing Even or Odd Interface"></h2><br>
 
-###   <a name="thegamemaxbet">Max amount of betable Marbles</a>
+###   Max amount of betable Marbles
 -   The amount of marbles you can bet is limited. This prevents you from going all in from the start and leaving it to a single roll (unless you decide to play with 5 starting marbles).
 -   The top amount of marbles you can bet in one go is 5.
 -   You cannot bet more marbles than you have. E.g. if you have only 3 marbles left your options will be limited to betting 1,2 or 3 marbles.
 -   Betting more marbles than your opponent has is also not possible. If your opponent has only 2 marbles left, you can only bet 1 or 2 marbles.
 <h2><img src="./docs/images/thegame_maxbet.jpg" alt="Picture of reduced betting options due to score"></h2><br>
 
-###   <a name="thegamewinning">Winning and Losing</a>
+###   Winning and Losing
 -   You win or lose the game when either the computer or you reach 0 marbles.
 <h2><img src="./docs/images/thegame_winner.jpg" alt="Picture of winner announcement"></h2><br>
 
 <br>
 
-## Features
+## <a name="features">Features</a>
 
 ###   <a name="responsive">Responsive on all device sizes</a>
 
@@ -189,7 +183,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 - No Javascript active/supported: The starting Page will throw a warning in red at the user if Javascript is not enabled or supported in the current Browser.
 <h2><img src="./docs/images/webpage_nojs.jpg" alt="Picture of the error message when javascript isn't available"></h2><br>
 
-## Technologies Used</a>
+## <a name="technology">Technologies Used</a>
 
 ### <a name="languages">Languages Used</a>
 
@@ -214,7 +208,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 <br>
 
-## Testing
+## <a name="testing">Testing</a>
 
 ### <a name="generaltesting">General Testing</a>
 
