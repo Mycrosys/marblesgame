@@ -136,11 +136,11 @@ function playBet() {
                     if (calculateResult(bet, guess)) {                          // if true is returned the answer was correct and player loses marbles
                         userScore = userScore - bet;
                         computerScore = computerScore + bet;
-                        lastTurnResult = `Computer chose right! You <span id="lose">lose ${bet} Marble/s</span>!`;
+                        lastTurnResult = `Computer chose right! You <span class="lose">lose ${bet} Marble/s</span>!`;
                     } else {                                                    // if false is returned the answer was wrong and player gains marbles
                         userScore = userScore + bet;
                         computerScore = computerScore - bet;
-                        lastTurnResult = `Computer chose wrong! You <span id="win">win ${bet} Marble/s</span>!`;
+                        lastTurnResult = `Computer chose wrong! You <span class="win">win ${bet} Marble/s</span>!`;
                     }
                     
                     gameTurn++;                                                 // Next turn coming up so increase turn counter
@@ -166,8 +166,8 @@ function setBetField() {
     let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
         <p>Turn ${gameTurn}: Bet your Marbles!</p>
-        <span class="left" id="score-user">Your Score: ${userScore}</span>
-        <span class="right" id="score-computer">Computer Score: ${computerScore}</span>
+        <span class="left score-user">Your Score: ${userScore}</span>
+        <span class="right score-computer">Computer Score: ${computerScore}</span>
     `;
 
     // Display last round results
@@ -228,11 +228,11 @@ function playGuess() {
                     if (calculateResult(bet, guess)) {
                         userScore = userScore + bet;
                         computerScore = computerScore - bet;
-                        lastTurnResult = `You chose right! You <span id="win">win ${bet} Marble/s</span>!`;
+                        lastTurnResult = `You chose right! You <span class="win">win ${bet} Marble/s</span>!`;
                     } else {
                         userScore = userScore - bet;
                         computerScore = computerScore + bet;
-                        lastTurnResult = `You chose wrong! You <span id="lose">lose ${bet} Marble/s</span>!`;
+                        lastTurnResult = `You chose wrong! You <span class="lose">lose ${bet} Marble/s</span>!`;
                     }
                     
                     // Next turn coming up so increase turn counter and set up for betting marbles
@@ -246,11 +246,11 @@ function playGuess() {
                     if (calculateResult(bet, guess)) {
                         userScore = userScore + bet;
                         computerScore = computerScore - bet;
-                        lastTurnResult = `You chose right! You <span id="win">win ${bet} Marble/s</span>!`;
+                        lastTurnResult = `You chose right! You <span class="win">win ${bet} Marble/s</span>!`;
                     } else {
                         userScore = userScore - bet;
                         computerScore = computerScore + bet;
-                        lastTurnResult = `You chose wrong! You <span id="lose">lose ${bet} Marble/s</span>!`;
+                        lastTurnResult = `You chose wrong! You <span class="lose">lose ${bet} Marble/s</span>!`;
                     }
                     
                     gameTurn++;                                             // Next turn coming up so increase turn counter
@@ -276,8 +276,8 @@ function setGuessField() {
     let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
         <p>Turn ${gameTurn}: Guess Even or Odd!</p>
-        <span class="left" id="score-user">Your Score: ${userScore}</span>
-        <span class="right" id="score-computer">Computer Score: ${computerScore}</span>
+        <span class="left score-user">Your Score: ${userScore}</span>
+        <span class="right score-computer">Computer Score: ${computerScore}</span>
     `;
 
     // Display last round results
@@ -311,8 +311,8 @@ function setWinnerField() {
     let topContent = document.getElementById("top-box");
     topContent.innerHTML = `
         <p>We have a Winner!</p>
-        <span class="left" id="score-user">Your Score: ${userScore}</span>
-        <span class="right" id="score-computer">Computer Score: ${computerScore}</span>
+        <span class="left score-user">Your Score: ${userScore}</span>
+        <span class="right score-computer">Computer Score: ${computerScore}</span>
     `;
 
     // Display last round results, no quit to start here because we have it on the mid-box
