@@ -10,7 +10,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 ## Table of Contents
 ### I. User Experience
--   [Five Planes of UXD](fiveplanes)
+-   [Five Planes of UXD](#fiveplanes)
 -   [Design](#design)
 -   [User Stories](#userstories)
 -   [Wireframes](#wireframes)
@@ -144,7 +144,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 -   For example, if you chose 20 starting marbles and Hard difficulty, you would start with 20 marbles, while the computer starts with 60 (20x3)
 <h2><img src="./docs/images/thegame_settings.jpg" alt="Picture of available Settings"></h2><br>
 
-###   <a name="thegamegamplayloop">Core Gameplay Loop</a>
+###   <a name="thegamegameplayloop">Core Gameplay Loop</a>
 -   You start betting your marbles. The computer will then decide (randomly) if he thinks that amount is even or odd. If the computer is right, you will lose the amount of marbles you bet. If the computer is wrong, you will win the amount of marbles you bet.
 -   The role then switches and the computer bets a random amount of marbles. You have to choose if that amount is even or odd and will win that amount of marbles if you are right and lose them if you are wrong.
 -   Then you are back to betting your own marbles. This continues until either you or the computer wins the game.
