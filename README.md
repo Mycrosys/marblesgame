@@ -237,7 +237,8 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 -   On Desktop Devices with a very high resolution (above 2600px wide, e.g. a full screen window on a 4k or Ultra Wide Display), the Background Image is no longer covering 100%.
 -   On Desktop Devices with a very low resolution (below 280px wide), the consistency of the website can no longer be upheld. These kind of devices shouldn't be supported by modern operating systems anymore and should be extremely rare.
--   The site does not work on Internet Explorer. The Start Game Button is unresponsive. In addition, the opacity of the boxes is not supported and is therefore using the same color as solid as a fallback instead of the semi-transparent one.
+-   The site does not work on Internet Explorer. The Start Game Button is unresponsive. Making it work would require a tremendous amount of rewriting the code for Internet Explorer 5 and up compatibility. Microsoft themselves no longer support Internet Explorer and advise you to upgrade to Edge in its stead. The website works flawlessly on Edge.
+-   In addition, the opacity of the boxes is not supported on Internet Explorer as well and is therefore using the same color as solid as a fallback instead of the semi-transparent one.
 
 <br>
 
