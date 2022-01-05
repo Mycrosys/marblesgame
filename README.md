@@ -6,7 +6,7 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 <h2 align="center"><img src="./docs/images/website_marblesgame.jpg" alt="The Marbles Game Webpage on multiple devices"></h2>
 
-<br><br>
+<br>
 
 ## Table of Contents
 ### I. [User Experience (UX)](#userxp)
@@ -15,24 +15,14 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 -   [User Stories](#userstories)
 -   [Wireframes](#wireframes)
 
-<br>
-
 ### II. [The Game](#thegame)
-
-<br>
 
 ### III. [Features](#features)
 -   [Responsive on all device sizes](#responsive)
 -   [Interactive elements](#interactive)
 -   [Error Handling](#errorhandling)
 
-<br>
-
 ### IV. [Technologies Used](#technology)
--   [Languages Used](#languages)
--   [Frameworks, Libraries & Programs Used](#usedtools)
-
-<br>
 
 ### V. [Testing](#testing)
 -   [General Testing](#generaltesting)
@@ -41,17 +31,13 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 -   [Further Testing](#furthertesting)
 -   [Known Bugs](#knownbugs)
 
-<br>
-
 ### VI. [Deployment](#deployment)
-
-<br>
 
 ### VII. [Credits](#credits)
 
 <br><br>
 
-## [User Experience (UX)](#userxp)
+## <a name="userxp">User Experience (UX)]</a>
 
 *   ### <a name="fiveplanes">Five Planes of UXD</a>
     -   #### Strategy Plane
@@ -185,13 +171,13 @@ This is a Minigame website about keeping your marbles and not losing it. It is d
 
 ## <a name="technology">Technologies Used</a>
 
-### <a name="languages">Languages Used</a>
+### Languages Used
 
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 -   [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 
-### <a name="usedtools">Frameworks, Libraries & Programs Used</a>
+### Frameworks, Libraries & Programs Used
 
 1. [Google Fonts:](https://fonts.google.com/)
     - Google fonts were used to import the 'Cormorant Upright' and 'Proza Libre' font into the style.css file.
